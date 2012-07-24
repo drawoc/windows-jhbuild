@@ -31,8 +31,8 @@
 	</dependencies>
 </tarball>
 
-<tarball id="atk" version="1.32.0" makeinstallargs=" install -j1">
-	<source href="http://ftp.gnome.org/pub/gnome/sources/atk/1.32/atk-1.32.0.tar.bz2" />
+<tarball id="atk" version="2.4.0" makeinstallargs=" install -j1">
+	<source href="http://ftp.gnome.org/pub/gnome/sources/atk/2.4/atk-2.4.0.tar.xz" />
 	<dependencies>
 		<dep package="glib"/>
 	</dependencies>
