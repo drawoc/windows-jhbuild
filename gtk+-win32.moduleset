@@ -15,14 +15,14 @@
 	</dependencies>
 </tarball>
 
-<tarball id="pixman" version="0.19.2">
-	<source href="http://cairographics.org/releases/pixman-0.19.2.tar.gz" md5sum="dfb84c9f402fbba5047f0e0a69c17518"/>
+<tarball id="pixman" version="0.26.2">
+	<source href="http://cairographics.org/releases/pixman-0.26.2.tar.gz"/>
 	<dependencies>
 	</dependencies>
 </tarball>
 
-<tarball id="pango" version="1.28">
-	<source href="http://ftp.acc.umu.se/pub/gnome/sources/pango/1.28/pango-1.28.1.tar.bz2" sha256sum="8f3eaab506f613dd25bb1fa65ea87a145d523d066d90c227bdb3016523451bc2"/>
+<tarball id="pango" version="1.28.4">
+	<source href="http://ftp.acc.umu.se/pub/gnome/sources/pango/1.28/pango-1.28.4.tar.bz2"/>
 	<dependencies>
 		<dep package="cairo"/>
 		<dep package="pixman"/>
@@ -31,15 +31,15 @@
 	</dependencies>
 </tarball>
 
-<tarball id="atk" version="1.30.0">
-	<source href="http://ftp.acc.umu.se/pub/gnome/sources/atk/1.30/atk-1.30.0.tar.bz2" sha256sum="92b9b1213cafc68fe9c3806273b968c26423237d7b1f631dd83dc5270b8c268c"/>
+<tarball id="atk" version="1.32.0" makeinstallargs=" install -j1">
+	<source href="http://ftp.gnome.org/pub/gnome/sources/atk/1.32/atk-1.32.0.tar.bz2" />
 	<dependencies>
 		<dep package="glib"/>
 	</dependencies>
 </tarball>
 
-<tarball id="fontconfig" version="2.8.0">
-	<source href="http://www.fontconfig.org/release/fontconfig-2.8.0.tar.gz" md5sum="77e15a92006ddc2adbb06f840d591c0e"/>
+<tarball id="fontconfig" version="2.10.0" makeinstallargs=" install -j1">
+	<source href="http://www.fontconfig.org/release/fontconfig-2.10.0.tar.bz2"/>
 	<dependencies>
 		<dep package="freetype"/>
 	</dependencies>
@@ -53,8 +53,8 @@
 </tarball>
 
 
-<tarball id="libxml2" version="2.7.7">
-	<source href="ftp://xmlsoft.org/libxml2/libxml2-2.7.7.tar.gz" md5sum="9abc9959823ca9ff904f1fbcf21df066"/>
+<tarball id="libxml2" version="2.8.0">
+	<source href="ftp://xmlsoft.org/libxml2/libxml2-2.8.0.tar.gz"/>
 	<dependencies>
 		<dep package="iconv"/>
 	</dependencies>

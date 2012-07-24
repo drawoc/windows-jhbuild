@@ -34,14 +34,14 @@ os.environ['prefix'] = prefix
 #The host value is obtained with the result of executing
 #the config.guess script on any of the packages.
 #This value must be valid for most linux/x86 out there
-os.environ['HOST'] = 'i686-pc-linux-gnu'
-os.environ['TARGET'] = 'i586-pc-mingw32'
+os.environ['HOST'] = 'x86_64-unknown-linux-gnu'
+os.environ['TARGET'] = 'i486-mingw32'
 
 addpath('PKG_CONFIG_PATH', os.path.join(os.sep, 'usr', 'lib', 'pkgconfig'))
 addpath('PKG_CONFIG_PATH', os.path.join(os.sep, 'usr', 'share', 'pkgconfig'))
 
 #Prefix for all the tools
-mingw_tool_prefix = '/usr/bin/i586-mingw32msvc-'
+mingw_tool_prefix = '/usr/bin/i486-mingw32-'
 
 mingw_tools = {'ADDR2LINE': 'addr2line',
 	'AS': 'as', 'CC': 'gcc', 'CPP': 'cpp',
@@ -64,11 +64,14 @@ os.environ['RC'] = os.environ['WINDRES']
 
 #Exporting tool flags enviroment variables
 os.environ['LDFLAGS']  = '-L'+prefix+'/lib'
-os.environ['CFLAGS']   = '-mms-bitfields -march=i686 -I'+prefix+'/include'
+os.environ['CFLAGS']   = '-mms-bitfields -march=i686 -I'+prefix+'/include -DLIBXML_STATIC'
 os.environ['CPPFLAGS'] = '-I'+prefix+'/include'
 os.environ['CXXFLAGS'] = '-mms-bitfields -march=i686'
 os.environ['ARFLAGS']  = '-ar rcs'
-os.environ['INSTALL']  = os.path.expanduser('~/bin/install-check')
+os.environ['INSTALL']  = os.path.expanduser('~/bin/prefix/bin/install-check')
+
+#Don't install libraries in lib64, even if compiling on 64-bit machines
+use_lib64 = False
 
 #needed by win32/Makefile.gcc of zlib
 os.environ['INCLUDE_PATH'] = prefix+'/include'
@@ -99,7 +102,8 @@ module_autogenargs['gettext']    = autogenargs + """ --without-emacs \
                                                      --disable-curses \
                                                      --disable-java \
                                                      --disable-native-java \
-                                                     --enable-relocatable"""
+                                                     --enable-relocatable \
+                                                     --enable-threads=win32"""
 
 module_autogenargs['glib']       = autogenargs + """ --enable-explicit-deps=no \
                                                      --disable-gtk-doc"""
@@ -107,6 +111,9 @@ module_autogenargs['glib']       = autogenargs + """ --enable-explicit-deps=no \
 module_autogenargs['cairo']      = autogenargs + """ --enable-explicit-deps=no \
                                                      --enable-xlib=no \
                                                      --enable-xlib-xrender=no \
+                                                     --enable-xcb=no \
+                                                     --enable-xcb-shm=no \
+                                                     --enable-pthread=no \
                                                      --enable-win32-font=yes"""
 
 module_autogenargs['pixman']     = autogenargs + """ --enable-gtk=no"""
@@ -117,7 +124,8 @@ module_autogenargs['pango']      = autogenargs + """ --disable-gtk-doc \
 
 module_autogenargs['atk']        = autogenargs + """ --disable-glibtest \
                                                      --disable-scrollkeeper \
-                                                     --disable-gtk-doc"""
+                                                     --disable-gtk-doc \
+                                                     --enable-introspection=no"""
 
 module_autogenargs['gtk+']       = autogenargs + """ --disable-glibtest \
                                                      --disable-scrollkeeper \
@@ -125,7 +133,8 @@ module_autogenargs['gtk+']       = autogenargs + """ --disable-glibtest \
                                                      --with-included-modules \
                                                      --without-libjasper"""
 
-module_autogenargs['fontconfig'] = autogenargs + """ --with-arch=i686"""
+module_autogenargs['fontconfig'] = autogenargs + """ --with-arch=i686 \
+                                                     --enable-libxml2"""
 
 module_autogenargs['freetype']   = autogenargs + """ --with-arch=i686 \
                                                      --disable-gtk-doc \
