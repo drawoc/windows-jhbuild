@@ -37,8 +37,8 @@ os.environ['prefix'] = prefix
 os.environ['HOST'] = 'x86_64-unknown-linux-gnu'
 os.environ['TARGET'] = 'i486-mingw32'
 
-addpath('PKG_CONFIG_PATH', os.path.join(os.sep, 'usr', 'lib', 'pkgconfig'))
-addpath('PKG_CONFIG_PATH', os.path.join(os.sep, 'usr', 'share', 'pkgconfig'))
+addpath('PKG_CONFIG_LIBDIR', os.path.join(os.sep, prefix, 'lib', 'pkgconfig'))
+addpath('PKG_CONFIG_LIBDIR', os.path.join(os.sep, prefix, 'share', 'pkgconfig'))
 
 #Prefix for all the tools
 mingw_tool_prefix = '/usr/bin/i486-mingw32-'
@@ -73,6 +73,9 @@ os.environ['INSTALL']  = os.path.expanduser('~/bin/prefix/bin/install-check')
 #Don't install libraries in lib64, even if compiling on 64-bit machines
 use_lib64 = False
 
+#Make sure glib doesn't run its scripts with python 3
+os.environ['PYTHON'] = "/usr/bin/python2"
+
 #needed by win32/Makefile.gcc of zlib
 os.environ['INCLUDE_PATH'] = prefix+'/include'
 os.environ['LIBRARY_PATH'] = prefix+'/lib'
@@ -106,7 +109,8 @@ module_autogenargs['gettext']    = autogenargs + """ --without-emacs \
                                                      --enable-threads=win32"""
 
 module_autogenargs['glib']       = autogenargs + """ --enable-explicit-deps=no \
-                                                     --disable-gtk-doc"""
+                                                     --disable-gtk-doc \
+                                                     --cache-file=""" + os.environ['PWD'] + "/win32.cache"
 
 module_autogenargs['cairo']      = autogenargs + """ --enable-explicit-deps=no \
                                                      --enable-xlib=no \

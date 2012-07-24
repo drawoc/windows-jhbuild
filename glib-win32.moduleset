@@ -16,13 +16,17 @@
 	</dependencies>
 </tarball>
 
+<tarball id="libffi" version="3.0.11">
+	<source href="ftp://sourceware.org/pub/libffi/libffi-3.0.11.tar.gz"/>
+</tarball>
 
-<tarball id="glib" version="2.24.1">
-	<source href="http://download.gnome.org/sources/glib/2.24/glib-2.24.1.tar.bz2" sha256sum="b49d2dddc1becabffc88d0116967196be064b6b6e9ecac438701fdad9fac1f02"/>
+<tarball id="glib" version="2.32.3">
+	<source href="http://ftp.gnome.org/pub/gnome/sources/glib/2.32/glib-2.32.3.tar.xz"/>
 	<dependencies>
 		<dep package="gettext"/>
 		<dep package="iconv"/>
 		<dep package="zlib"/>
+		<dep package="libffi"/>
 	</dependencies>
 </tarball>
 
