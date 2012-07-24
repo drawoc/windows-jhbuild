@@ -3,7 +3,8 @@
 	<repository type="svn" name="svn.gnome.org" default="yes" href="http://svn.gnome.org/svn/"/>
 
 <tarball id="zlib" version="1.2.7" makeargs="-f win32/Makefile.gcc -e zlib1.dll SHARED_MODE=1" makeinstallargs="-f win32/Makefile.gcc -e install SHARED_MODE=1">
-	<source href="http://zlib.net/zlib-1.2.7.tar.gz"/>
+	<source href="http://zlib.net/zlib-1.2.7.tar.gz"
+		md5sum="60df6a37c56e7c1366cca812414f7b85"/>
 </tarball>
 
 <tarball id="tiff" version="3.8.2">

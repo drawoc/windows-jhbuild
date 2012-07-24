@@ -16,13 +16,15 @@
 </tarball>
 
 <tarball id="pixman" version="0.26.2">
-	<source href="http://cairographics.org/releases/pixman-0.26.2.tar.gz"/>
+	<source href="http://cairographics.org/releases/pixman-0.26.2.tar.gz"
+		sha1sum="3c7d72b5b52e6d301efc68aa480f0737a641bdd3"/>
 	<dependencies>
 	</dependencies>
 </tarball>
 
 <tarball id="pango" version="1.28.4">
-	<source href="http://ftp.acc.umu.se/pub/gnome/sources/pango/1.28/pango-1.28.4.tar.bz2"/>
+	<source href="http://ftp.acc.umu.se/pub/gnome/sources/pango/1.28/pango-1.28.4.tar.bz2"
+		sha256sum="7eb035bcc10dd01569a214d5e2bc3437de95d9ac1cfa9f50035a687c45f05a9f"/>
 	<dependencies>
 		<dep package="cairo"/>
 		<dep package="pixman"/>
@@ -32,7 +34,8 @@
 </tarball>
 
 <tarball id="atk" version="2.4.0" makeinstallargs=" install -j1">
-	<source href="http://ftp.gnome.org/pub/gnome/sources/atk/2.4/atk-2.4.0.tar.xz" />
+	<source href="http://ftp.gnome.org/pub/gnome/sources/atk/2.4/atk-2.4.0.tar.xz"
+		sha256sum="091e9ce975a9fbbc7cd8fa64c9c389ffb7fa6cdde58b6d5c01b2c267093d888d"/>
 	<dependencies>
 		<dep package="glib"/>
 	</dependencies>
