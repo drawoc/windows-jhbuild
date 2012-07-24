@@ -134,6 +134,7 @@ module_autogenargs['atk']        = autogenargs + """ --disable-glibtest \
 module_autogenargs['gtk+']       = autogenargs + """ --disable-glibtest \
                                                      --disable-scrollkeeper \
                                                      --disable-gtk-doc \
+                                                     --disable-cups \
                                                      --with-included-modules \
                                                      --without-libjasper"""
 
