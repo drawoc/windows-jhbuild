@@ -13,8 +13,9 @@
 	</dependencies>
 </tarball>
 
-<tarball id="png" version="1.2.20">
-	<source href="http://downloads.sourceforge.net/libpng/libpng-1.2.20.tar.bz2" md5sum="8c186d9da3d011e2c3076b28f9c6be7b"/>
+<tarball id="png" version="1.5.12">
+	<source href="http://downloads.sourceforge.net/libpng/libpng-1.5.12.tar.xz"
+		md5sum="0fd51add1da6a0e470e0c726c59171b9"/>
 	<dependencies>
 		<dep package="zlib"/>
 	</dependencies>
