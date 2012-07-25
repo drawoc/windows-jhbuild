@@ -5,8 +5,12 @@
 
 	<repository type="svn" name="svn.gnome.org" default="yes" href="http://svn.gnome.org/svn/"/>
 
-<tarball id="cairo" version="1.8.10">
-	<source href="http://cairographics.org/releases/cairo-1.8.10.tar.gz" md5sum="b60a82f405f9400bbfdcf850b1728d25"/>
+<tarball id="cairo" version="1.10.2">
+	<source href="http://cairographics.org/releases/cairo-1.10.2.tar.gz"
+		sha1sum="ccce5ae03f99c505db97c286a0c9a90a926d3c6e"/>
+	<patches>
+		<patch file="cairo-1-10-define-ffs.patch"/>
+	</patches>
 	<dependencies>
 		<dep package="zlib"/>
 		<dep package="png"/>
