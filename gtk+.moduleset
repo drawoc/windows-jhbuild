@@ -3,8 +3,6 @@
 	<include href="glib.moduleset"/>
 	<include href="imglibs.moduleset"/>
 
-	<repository type="svn" name="svn.gnome.org" default="yes" href="http://svn.gnome.org/svn/"/>
-
 <tarball id="cairo" version="1.10.2">
 	<source href="http://cairographics.org/releases/cairo-1.10.2.tar.gz"
 		sha1sum="ccce5ae03f99c505db97c286a0c9a90a926d3c6e"/>
