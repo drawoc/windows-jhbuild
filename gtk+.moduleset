@@ -24,9 +24,9 @@
 	</dependencies>
 </tarball>
 
-<tarball id="pango" version="1.28.4">
-	<source href="http://ftp.acc.umu.se/pub/gnome/sources/pango/1.28/pango-1.28.4.tar.bz2"
-		sha256sum="7eb035bcc10dd01569a214d5e2bc3437de95d9ac1cfa9f50035a687c45f05a9f"/>
+<tarball id="pango" version="1.29.4">
+	<source href="http://ftp.gnome.org/pub/gnome/sources/pango/1.29/pango-1.29.4.tar.xz"
+		sha256sum="7ae8d1953e6098a2706df58c1f84555c06ace7006bb34c0e54ab9acd98c1127f"/>
 	<dependencies>
 		<dep package="cairo"/>
 		<dep package="pixman"/>
