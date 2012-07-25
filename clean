@@ -1,0 +1,7 @@
+#!/bin/sh
+
+pushd checkout.rls
+rm -r *-*/
+popd
+
+rm -r target.rls
