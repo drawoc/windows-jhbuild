@@ -2,4 +2,4 @@
 
 export BUILD_FLAVOUR=rls
 
-jhbuild --file=gtk+-win32.jhbuildrc $*
+jhbuild --file=build.jhbuildrc $*

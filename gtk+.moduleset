@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <moduleset>
-	<include href="glib-win32.moduleset"/>
-	<include href="imglibs-win32.moduleset"/>
+	<include href="glib.moduleset"/>
+	<include href="imglibs.moduleset"/>
 
 	<repository type="svn" name="svn.gnome.org" default="yes" href="http://svn.gnome.org/svn/"/>
 
