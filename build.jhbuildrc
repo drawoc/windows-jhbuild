@@ -10,9 +10,9 @@
 # modified by: Rolf Gebhardt <rg@klige.de>
 # 
 
-moduleset = os.environ['PWD']+'/gtk+.moduleset'
+moduleset = os.environ['PWD']+'/gimp.moduleset'
 
-modules = ['gtk+']
+modules = [os.environ['MODULE']]
 
 flavour = os.environ['BUILD_FLAVOUR']
 
@@ -27,9 +27,11 @@ else:
 # checkoutroot: path to download packages elsewhere
 # prefix:       target path to install the compiled binaries
 checkoutroot = os.environ['PWD']+'/checkout.'+flavour_ext+'/'
-prefix = os.environ['PWD']+'/target.'+flavour_ext+'/'
+prefix = os.environ['PWD']+'/targets/'+os.environ['MODULE']+'/'
 
 os.environ['prefix'] = prefix
+
+searchprefix = os.environ['PWD']+'/targets/gimp-common/'
 
 #The host value is obtained with the result of executing
 #the config.guess script on any of the packages.
@@ -37,8 +39,8 @@ os.environ['prefix'] = prefix
 os.environ['HOST'] = 'x86_64-unknown-linux-gnu'
 os.environ['TARGET'] = 'i486-mingw32'
 
-addpath('PKG_CONFIG_LIBDIR', os.path.join(os.sep, prefix, 'lib', 'pkgconfig'))
-addpath('PKG_CONFIG_LIBDIR', os.path.join(os.sep, prefix, 'share', 'pkgconfig'))
+addpath('PKG_CONFIG_LIBDIR', os.path.join(searchprefix, 'lib', 'pkgconfig'))
+addpath('PKG_CONFIG_LIBDIR', os.path.join(searchprefix, 'share', 'pkgconfig'))
 
 #Prefix for all the tools
 mingw_tool_prefix = '/usr/bin/i486-mingw32-'
@@ -63,9 +65,9 @@ for tool in mingw_tools.keys():
 os.environ['RC'] = os.environ['WINDRES']
 
 #Exporting tool flags enviroment variables
-os.environ['LDFLAGS']  = '-L'+prefix+'/lib'
-os.environ['CFLAGS']   = '-mms-bitfields -march=i686 -I'+prefix+'/include -DLIBXML_STATIC'
-os.environ['CPPFLAGS'] = '-I'+prefix+'/include'
+os.environ['LDFLAGS']  = '-L'+searchprefix+'/lib'
+os.environ['CFLAGS']   = '-mms-bitfields -march=i686 -I'+searchprefix+'/include -DLIBXML_STATIC'
+os.environ['CPPFLAGS'] = '-I'+searchprefix+'/include'
 os.environ['CXXFLAGS'] = '-mms-bitfields -march=i686'
 os.environ['ARFLAGS']  = '-ar rcs'
 os.environ['INSTALL']  = os.path.expanduser('~/bin/prefix/bin/install-check')
@@ -87,7 +89,6 @@ alwaysautogen = True
 #Populating autogenargs
 autogenargs  = ' --build='+os.environ['HOST']
 autogenargs += ' --host='+os.environ['TARGET']
-autogenargs += ' --target='+os.environ['TARGET']
 autogenargs += ' --disable-docs'
 autogenargs += ' --enable-all-warnings --enable-maintainer-mode'
 autogenargs += ' --disable-static'
@@ -148,6 +149,14 @@ module_autogenargs['freetype']   = autogenargs + """ --with-arch=i686 \
 module_autogenargs['libxml2']    = autogenargs + """ --with-arch=i686 \
                                                      --with-python=no \
                                                      --with-iconv=yes"""
+
+module_autogenargs['babl']       = autogenargs + """ --enable-introspection=no"""
+
+module_autogenargs['gegl']       = autogenargs + """ --enable-introspection=no \
+                                                     --with-sdl=no"""
+
+module_autogenargs['gimp-stable']= autogenargs + """ --disable-python \
+                                                     --without-wmf """
 
 # Todo:
 # module_autogenargs['jasper'] = autogenargs + """ --enable-shared --disable-static"""

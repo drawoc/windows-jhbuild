@@ -4,4 +4,5 @@ pushd checkout.rls
 rm -r *-*/
 popd
 
-rm -r target.rls
+rm -rf targets/*
+cp -r bz2 targets/gimp-common

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<moduleset>
+	<repository type="git" name="git.gnome.org" default="yes"
+		href="git://git.gnome.org/"/>
+
+	<include href="gtk+.moduleset"/>
+
+<autotools id="babl">
+	<branch/>
+	<dependencies>
+		<dep package="glib"/>
+	</dependencies>
+</autotools>
+
+<autotools id="gegl">
+	<branch/>
+	<dependencies>
+		<dep package="babl"/>
+	</dependencies>
+</autotools>
+
+<metamodule id="gimp-common">
+	<dependencies>
+		<dep package="gtk+"/>
+		<dep package="gegl"/>
+	</dependencies>
+</metamodule>
+
+<autotools id="gimp-stable">
+	<branch module="gimp" revision="gimp-2-8"/>
+	<dependencies>
+		<dep package="gimp-common"/>
+	</dependencies>
+</autotools>
+
+</moduleset>

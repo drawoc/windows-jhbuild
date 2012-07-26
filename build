@@ -1,5 +1,18 @@
 #!/bin/sh
+set -e
+mkdir -p logs
+((
 
 export BUILD_FLAVOUR=rls
 
+export MODULE=gimp-common
 jhbuild --file=build.jhbuildrc $*
+
+mkdir -p targets/gimp-stable/_jhbuild/manifests
+cp -a targets/gimp-common/_jhbuild/manifests/* targets/gimp-stable/_jhbuild/manifests
+cp -a targets/gimp-common/_jhbuild/packagedb.xml targets/gimp-stable/_jhbuild/
+
+export MODULE=gimp-stable
+jhbuild --file=build.jhbuildrc $*
+
+) 2>&1) | tee logs/buildlog-`date +%s`
