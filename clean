@@ -1,7 +1,7 @@
 #!/bin/sh
 
-pushd checkout.rls
-rm -r *-*/
+pushd checkout
+rm -rf *-*/
 popd
 
 rm -rf targets/*
