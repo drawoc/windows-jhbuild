@@ -69,7 +69,7 @@
 		sha256sum="a60af12b58d9cc15ba4c680c6730ce5d38e8d664af1d575a379385b94b4ec7ba"/>
 	<dependencies>
 		<dep package="glib"/>
-		<dep package="png"/>
+		<dep package="imglibs"/>
 	</dependencies>
 </tarball>
 
@@ -82,12 +82,7 @@
 		<dep package="cairo"/>
 		<dep package="atk"/>
 		<dep package="pango"/>
-		<dep package="tiff"/>
-		<dep package="png"/>
-		<dep package="jpeg"/>
-<!-- ToDo:
-		<dep package="jasper"/>
--->
+		<dep package="imglibs"/>
 	</dependencies>
 </tarball>
 
