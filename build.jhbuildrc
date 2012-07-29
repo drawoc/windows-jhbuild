@@ -132,6 +132,8 @@ module_autogenargs['atk']        = autogenargs + """ --disable-glibtest \
                                                      --disable-gtk-doc \
                                                      --enable-introspection=no"""
 
+module_autogenargs['gdk-pixbuf'] = autogenargs + """ --with-included-loaders"""
+
 module_autogenargs['gtk+']       = autogenargs + """ --disable-glibtest \
                                                      --disable-scrollkeeper \
                                                      --disable-gtk-doc \
