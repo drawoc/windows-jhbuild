@@ -82,7 +82,6 @@
 		<dep package="cairo"/>
 		<dep package="atk"/>
 		<dep package="pango"/>
-		<dep package="imglibs"/>
 	</dependencies>
 </tarball>
 
