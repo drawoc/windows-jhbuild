@@ -6,8 +6,9 @@
 		md5sum="60df6a37c56e7c1366cca812414f7b85"/>
 </tarball>
 
-<tarball id="tiff" version="3.8.2">
-	<source href="http://download.osgeo.org/libtiff/tiff-3.8.2.tar.gz" md5sum="fbb6f446ea4ed18955e2714934e5b698"/>
+<tarball id="tiff" version="4.0.2">
+	<source href="http://download.osgeo.org/libtiff/tiff-4.0.2.tar.gz"
+		md5sum="04a08fa1e07e696e820a0c3f32465a13"/>
 	<dependencies>
 		<dep package="jpeg"/>
 	</dependencies>
