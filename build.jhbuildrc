@@ -83,9 +83,6 @@ os.environ['INCLUDE_PATH'] = prefix+'/include'
 os.environ['LIBRARY_PATH'] = prefix+'/lib'
 os.environ['BINARY_PATH']  = prefix+'/bin'
 
-# always autogen because otherwise freetype will not build
-alwaysautogen = True
-
 #Populating autogenargs
 autogenargs  = ' --build='+os.environ['HOST']
 autogenargs += ' --host='+os.environ['TARGET']
@@ -111,12 +108,10 @@ module_autogenargs['gettext']    = autogenargs + """ --without-emacs \
                                                      --enable-relocatable \
                                                      --enable-threads=win32"""
 
-module_autogenargs['glib']       = autogenargs + """ --enable-explicit-deps=no \
-                                                     --disable-gtk-doc \
+module_autogenargs['glib']       = autogenargs + """ --disable-gtk-doc \
                                                      --cache-file=""" + os.environ['PWD'] + "/win32.cache"
 
-module_autogenargs['cairo']      = autogenargs + """ --enable-explicit-deps=no \
-                                                     --enable-xlib=no \
+module_autogenargs['cairo']      = autogenargs + """ --enable-xlib=no \
                                                      --enable-xlib-xrender=no \
                                                      --enable-xcb=no \
                                                      --enable-xcb-shm=no \
@@ -130,28 +125,19 @@ module_autogenargs['pango']      = autogenargs + """ --disable-gtk-doc \
                                                      --with-included-modules"""
 
 module_autogenargs['atk']        = autogenargs + """ --disable-glibtest \
-                                                     --disable-scrollkeeper \
                                                      --disable-gtk-doc \
                                                      --enable-introspection=no"""
 
 module_autogenargs['gdk-pixbuf'] = autogenargs + """ --with-included-loaders"""
 
 module_autogenargs['gtk+']       = autogenargs + """ --disable-glibtest \
-                                                     --disable-scrollkeeper \
                                                      --disable-gtk-doc \
-                                                     --disable-cups \
-                                                     --with-included-modules \
-                                                     --without-libjasper"""
+                                                     --disable-cups"""
 
 module_autogenargs['fontconfig'] = autogenargs + """ --with-arch=i686 \
                                                      --enable-libxml2"""
 
-module_autogenargs['freetype']   = autogenargs + """ --with-arch=i686 \
-                                                     --disable-gtk-doc \
-                                                     --disable-docs"""
-
-module_autogenargs['libxml2']    = autogenargs + """ --with-arch=i686 \
-                                                     --with-python=no \
+module_autogenargs['libxml2']    = autogenargs + """ --with-python=no \
                                                      --with-iconv=yes"""
 
 module_autogenargs['babl']       = autogenargs + """ --enable-introspection=no"""
