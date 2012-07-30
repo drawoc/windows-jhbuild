@@ -5,4 +5,3 @@ rm -rf *-*/
 popd
 
 rm -rf targets/*
-cp -r bz2 targets/gimp-common

@@ -2,6 +2,7 @@
 <moduleset>
 	<include href="glib.moduleset"/>
 	<include href="imglibs.moduleset"/>
+	<include href="compresslibs.moduleset"/>
 
 <tarball id="cairo" version="1.10.2">
 	<source href="http://cairographics.org/releases/cairo-1.10.2.tar.gz"
@@ -53,6 +54,7 @@
 <tarball id="freetype" version="2.4.2">
 	<source href="http://download.savannah.gnu.org/releases/freetype/freetype-2.4.2.tar.gz" md5sum="5a3920aa1a8a0f3734612e8729df54d8"/>
 	<dependencies>
+		<dep package="bzip2"/>
 		<dep package="libxml2"/>
 	</dependencies>
 </tarball>
