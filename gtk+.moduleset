@@ -6,6 +6,8 @@
 
 	<repository type="tarball" name="cairographics.org"
 		href="http://cairographics.org/releases/" />
+	<repository type="tarball" name="gnome.org"
+		href="http://ftp.gnome.org/pub/gnome/sources/" />
 
 <autotools id="cairo" autogen-sh="configure">
 	<branch version="1.12.2" repo="cairographics.org"
@@ -27,16 +29,18 @@
 	</dependencies>
 </tarball>
 
-<tarball id="pango" version="1.29.4">
-	<source href="http://ftp.gnome.org/pub/gnome/sources/pango/1.29/pango-1.29.4.tar.xz"
-		sha256sum="7ae8d1953e6098a2706df58c1f84555c06ace7006bb34c0e54ab9acd98c1127f"/>
+<autotools id="pango" autogen-sh="configure">
+	<branch version="1.30.1" repo="gnome.org"
+			module="pango/1.30/pango-1.30.1.tar.xz"
+			hash="sha256:3a8c061e143c272ddcd5467b3567e970cfbb64d1d1600a8f8e62435556220cbe">
+	</branch>
 	<dependencies>
 		<dep package="cairo"/>
 		<dep package="pixman"/>
 		<dep package="glib"/>
 		<dep package="fontconfig"/>
 	</dependencies>
-</tarball>
+</autotools>
 
 <tarball id="atk" version="2.4.0" makeinstallargs=" install -j1">
 	<source href="http://ftp.gnome.org/pub/gnome/sources/atk/2.4/atk-2.4.0.tar.xz"
@@ -80,6 +84,10 @@
 <tarball id="gtk+" version="2.24.11" makeinstallargs="install -j1">
 	<source href="http://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/gtk+-2.24.11.tar.xz"
 		sha256sum="328b4ea19a61040145e777e2ac49820968a382ac8581a380c9429897881812a9"/>
+	<patches>
+		<!-- Local patch -->
+		<patch file="gtk-2.24.11-link-to-gmodule.patch" strip="0"/>
+	</patches>
 	<dependencies>
 		<dep package="glib"/>
 		<dep package="gdk-pixbuf"/>

@@ -1,0 +1,11 @@
+--- gtk/Makefile.in.orig	2012-07-30 12:52:38.665707353 -0400
++++ gtk/Makefile.in	2012-07-30 12:52:45.795503100 -0400
+@@ -1625,7 +1625,7 @@
+ libgtk_quartz_2_0_la_LDFLAGS = $(libtool_opts)
+ libgtk_directfb_2_0_la_LDFLAGS = $(libtool_opts)
+ libgtk_x11_2_0_la_LIBADD = $(libadd)
+-libgtk_win32_2_0_la_LIBADD = $(libadd) -lole32 -lgdi32 -lcomdlg32 -lwinspool -lcomctl32
++libgtk_win32_2_0_la_LIBADD = $(libadd) -lole32 -lgdi32 -lcomdlg32 -lwinspool -lcomctl32 -lgmodule-2.0
+ libgtk_quartz_2_0_la_LIBADD = $(libadd)
+ libgtk_directfb_2_0_la_LIBADD = $(libadd)
+ libgtk_x11_2_0_la_DEPENDENCIES = $(deps)
