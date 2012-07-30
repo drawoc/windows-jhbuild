@@ -4,19 +4,21 @@
 	<include href="imglibs.moduleset"/>
 	<include href="compresslibs.moduleset"/>
 
-<tarball id="cairo" version="1.10.2">
-	<source href="http://cairographics.org/releases/cairo-1.10.2.tar.gz"
-		sha1sum="ccce5ae03f99c505db97c286a0c9a90a926d3c6e"/>
-	<patches>
-		<patch file="cairo-1-10-define-ffs.patch"/>
-	</patches>
+	<repository type="tarball" name="cairographics.org"
+		href="http://cairographics.org/releases/" />
+
+<autotools id="cairo" autogen-sh="configure">
+	<branch version="1.12.2" repo="cairographics.org"
+			module="cairo-1.12.2.tar.xz"
+			hash="sha1:bc2ee50690575f16dab33af42a2e6cdc6451e3f9">
+	</branch>
 	<dependencies>
 		<dep package="zlib"/>
 		<dep package="png"/>
 		<dep package="pixman"/>
 		<dep package="fontconfig"/>
 	</dependencies>
-</tarball>
+</autotools>
 
 <tarball id="pixman" version="0.26.2">
 	<source href="http://cairographics.org/releases/pixman-0.26.2.tar.gz"

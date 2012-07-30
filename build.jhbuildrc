@@ -66,7 +66,7 @@ os.environ['RC'] = os.environ['WINDRES']
 
 #Exporting tool flags enviroment variables
 os.environ['LDFLAGS']  = '-L'+searchprefix+'/lib'
-os.environ['CFLAGS']   = '-mms-bitfields -march=i686 -I'+searchprefix+'/include -DLIBXML_STATIC'
+os.environ['CFLAGS']   = '-mms-bitfields -march=i686 -I'+searchprefix+'/include -DLIBXML_STATIC -D_SSIZE_T_DEFINED'
 os.environ['CPPFLAGS'] = '-I'+searchprefix+'/include'
 os.environ['CXXFLAGS'] = '-mms-bitfields -march=i686'
 os.environ['ARFLAGS']  = '-ar rcs'
