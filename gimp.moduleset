@@ -33,4 +33,11 @@
 	</dependencies>
 </autotools>
 
+<autotools id="gimp-dev">
+	<branch module="gimp" revision="master"/>
+	<dependencies>
+		<dep package="gimp-common"/>
+	</dependencies>
+</autotools>
+
 </moduleset>

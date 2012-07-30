@@ -147,3 +147,6 @@ module_autogenargs['gegl']       = autogenargs + """ --enable-introspection=no \
 
 module_autogenargs['gimp-stable']= autogenargs + """ --disable-python \
                                                      --without-wmf """
+
+module_autogenargs['gimp-dev']   = autogenargs + """ --disable-python \
+                                                     --without-wmf """

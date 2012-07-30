@@ -3,16 +3,23 @@ set -e
 mkdir -p logs
 ((
 
+init_target (){
+	mkdir -p targets/$1/_jhbuild/manifests
+	cp -a targets/gimp-common/_jhbuild/manifests/* targets/$1/_jhbuild/manifests
+	cp -a targets/gimp-common/_jhbuild/packagedb.xml targets/$1/_jhbuild/
+}
+
 export BUILD_FLAVOUR=rls
 
 export MODULE=gimp-common
 jhbuild --file=build.jhbuildrc $*
 
-mkdir -p targets/gimp-stable/_jhbuild/manifests
-cp -a targets/gimp-common/_jhbuild/manifests/* targets/gimp-stable/_jhbuild/manifests
-cp -a targets/gimp-common/_jhbuild/packagedb.xml targets/gimp-stable/_jhbuild/
-
+init_target gimp-stable
 export MODULE=gimp-stable
+jhbuild --file=build.jhbuildrc $*
+
+init_target gimp-dev
+export MODULE=gimp-dev
 jhbuild --file=build.jhbuildrc $*
 
 ) 2>&1) | tee logs/buildlog-`date +%s`
