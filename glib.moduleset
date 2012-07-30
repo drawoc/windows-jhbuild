@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <moduleset>
 
-<tarball id="iconv" version="1.12">
-	<source href="http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.12.tar.gz" md5sum="c2be282595751535a618ae0edeb8f648"/>
-</tarball>
+<repository type="tarball" name="gnu.org" href="http://ftp.gnu.org/pub/gnu/" />
+
+<autotools id="iconv" autogen-sh="configure">
+	<branch version="1.14" repo="gnu.org"
+			module="libiconv/libiconv-1.14.tar.gz"
+			hash="sha256:72b24ded17d687193c3366d0ebe7cde1e6b18f0df8c55438ac95be39e8a30613">
+	</branch>
+</autotools>
 
 <tarball id="gettext" version="0.18">
 	<source href="ftp://ftp.gnu.org/pub/gnu/gettext/gettext-0.18.tar.gz" md5sum="d52a3e061032a1ed13856d42fc86f0fd"/>
