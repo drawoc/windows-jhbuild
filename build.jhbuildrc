@@ -101,6 +101,8 @@ for tool in ('AR', 'RANLIB', 'STRIP', 'AS',
 #Module specific configure arguments
 module_autogenargs['zlib']       = ' --prefix='+prefix+' --shared'
 
+module_autogenargs['jasper']     = autogenargs + """ --enable-shared"""
+
 module_autogenargs['gettext']    = autogenargs + """ --without-emacs \
                                                      --without-cvs \
                                                      --disable-curses \
@@ -159,6 +161,3 @@ module_autogenargs['gegl']       = autogenargs + """ --enable-introspection=no \
 
 module_autogenargs['gimp-stable']= autogenargs + """ --disable-python \
                                                      --without-wmf """
-
-# Todo:
-# module_autogenargs['jasper'] = autogenargs + """ --enable-shared --disable-static"""
