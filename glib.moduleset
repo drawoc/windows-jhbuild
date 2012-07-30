@@ -10,15 +10,16 @@
 	</branch>
 </autotools>
 
-<tarball id="gettext" version="0.18">
-	<source href="ftp://ftp.gnu.org/pub/gnu/gettext/gettext-0.18.tar.gz" md5sum="d52a3e061032a1ed13856d42fc86f0fd"/>
-	<patches>
+<autotools id="gettext" autogen-sh="configure">
+	<branch version="0.18.1.1" repo="gnu.org"
+			module="gettext/gettext-0.18.1.1.tar.gz"
+			hash="sha256:93ac71a7afa5b70c1b1032516663658c51e653087f42a3fc8044752c026443e9">
 		<patch file="gettext_0_18_crossbuild_override_tools_fix.patch"/>
-	</patches>
+	</branch>
 	<dependencies>
 		<dep package="iconv"/>
 	</dependencies>
-</tarball>
+</autotools>
 
 <tarball id="libffi" version="3.0.11">
 	<source href="ftp://sourceware.org/pub/libffi/libffi-3.0.11.tar.gz"
