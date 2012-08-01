@@ -1,0 +1,62 @@
+#!/bin/sh
+
+dostuff (){
+	mkdir -p combined/$1
+	cp -R -d --reflink ./gimp-common/* combined/$1
+	cp -R -d --reflink ./$1/* combined/$1
+
+	pushd combined
+	pushd $1
+
+	rm -r _jhbuild
+	rm -r man
+	rm -r share/doc
+	rm -r share/gtk-doc
+	rm -r share/gtk-2.0/demo
+	rm -r share/icons
+	rm -r share/applications
+	rm -r share/info
+	rm -r share/man
+	rm -r share/gdb
+	rm -r share/gettext
+
+	rm etc/gconf/2/path.jhbuild
+
+	rm `find -name *.exe | sed -e /gimp/d -e /gspawn/d`
+
+	pushd bin
+	rm `ls | sed -e /.exe/d -e /.dll/d`
+	popd
+
+	rm `find -name *.html`
+	rm `find -name *.a`
+	rm `find -name *.def`
+	rm `find -name *.sh`
+	rm `find -name *.h`
+	rm `find -name *.c`
+	rm `find -name *.hxx`
+	rm `find -name *.pc`
+	rm `find -name *.m4`
+	rm `find -name *.manifest`
+
+	find -depth -type d -empty -exec rmdir {} \;
+
+	echo "@echo off
+SET PATH=%~dp0bin\\
+SET BABL_PATH=%~dp0lib\babl-0.1\\
+start $2" | unix2dos > run_gimp.bat
+
+	popd
+
+	7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on $1.7z $1
+	cat ~/bin/7z.sfx $1.7z > $1.exe
+
+	rm -r $1
+	rm $1.7z
+
+	popd
+}
+
+cd targets
+dostuff gimp-stable gimp-2.8.exe
+dostuff gimp-dev gimp-2.9.exe
