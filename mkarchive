@@ -2,8 +2,8 @@
 
 dostuff (){
 	mkdir -p combined/$1
-	cp -R -d --reflink ./gimp-common/* combined/$1
-	cp -R -d --reflink ./$1/* combined/$1
+	cp -R -d --reflink=auto ./gimp-common/* combined/$1
+	cp -R -d --reflink=auto ./$1/* combined/$1
 
 	pushd combined
 	pushd $1
