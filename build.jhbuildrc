@@ -78,6 +78,9 @@ use_lib64 = False
 #Make sure glib doesn't run its scripts with python 3
 os.environ['PYTHON'] = "/usr/bin/python2"
 
+#Ensure that gimp doesn't get the host machine's freetype-config
+os.environ['FREETYPE_CONFIG'] = os.path.join(searchprefix, 'bin', 'freetype-config')
+
 #needed by win32/Makefile.gcc of zlib
 os.environ['INCLUDE_PATH'] = prefix+'/include'
 os.environ['LIBRARY_PATH'] = prefix+'/lib'
