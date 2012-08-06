@@ -146,7 +146,9 @@ module_autogenargs['gegl']       = autogenargs + """ --enable-introspection=no \
                                                      --with-sdl=no"""
 
 module_autogenargs['gimp-stable']= autogenargs + """ --disable-python \
+                                                     --disable-gtk-doc \
                                                      --without-wmf """
 
 module_autogenargs['gimp-dev']   = autogenargs + """ --disable-python \
+                                                     --disable-gtk-doc \
                                                      --without-wmf """
