@@ -4,6 +4,8 @@ mkdir -p logs
 ((
 
 init_target (){
+	echo "Cleaning Target $1"
+	rm -r targets/$1 | true
 	mkdir -p targets/$1/_jhbuild/manifests
 	cp -a targets/gimp-common/_jhbuild/manifests/* targets/$1/_jhbuild/manifests
 	cp -a targets/gimp-common/_jhbuild/packagedb.xml targets/$1/_jhbuild/
@@ -14,11 +16,11 @@ export BUILD_FLAVOUR=rls
 export MODULE=gimp-common
 jhbuild --file=build.jhbuildrc $*
 
-init_target gimp-stable
+./targetisunchanged gimp-common gimp-stable || init_target gimp-stable
 export MODULE=gimp-stable
 jhbuild --file=build.jhbuildrc $*
 
-init_target gimp-dev
+./targetisunchanged gimp-common gimp-dev || init_target gimp-dev
 export MODULE=gimp-dev
 jhbuild --file=build.jhbuildrc $*
 
