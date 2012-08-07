@@ -50,11 +50,17 @@ start $2" | unix2dos > run_gimp.bat
 
 	popd
 
-	7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on $f.7z $f
-	cat ~/bin/7z.sfx $f.7z > $f.exe
+	if [ -e $f/bin/gimp-2.*.exe ]; then
+		7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on $f.7z $f
+		cat ~/bin/7z.sfx $f.7z > $f.exe
+		rm $f.7z
+	else
+		echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+		echo "!!            GIMP EXECUTABLE NOT FOUND                !!"
+		echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	fi
 
 	rm -r $f
-	rm $f.7z
 
 	popd
 }
