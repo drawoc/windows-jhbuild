@@ -1,12 +1,14 @@
 #!/bin/bash
 
 dostuff (){
-	mkdir -p combined/$1
-	cp -R -d --reflink=auto ./gimp-common/* combined/$1
-	cp -R -d --reflink=auto ./$1/* combined/$1
+	f=$1-i686-`date +%Y-%m-%d`
+
+	mkdir -p combined/$f
+	cp -R -d --reflink=auto ./gimp-common/* combined/$f
+	cp -R -d --reflink=auto ./$1/* combined/$f
 
 	pushd combined
-	pushd $1
+	pushd $f
 
 	rm -r _jhbuild
 	rm -r man
@@ -48,11 +50,11 @@ start $2" | unix2dos > run_gimp.bat
 
 	popd
 
-	7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on $1.7z $1
-	cat ~/bin/7z.sfx $1.7z > $1.exe
+	7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on $f.7z $f
+	cat ~/bin/7z.sfx $f.7z > $f.exe
 
-	rm -r $1
-	rm $1.7z
+	rm -r $f
+	rm $f.7z
 
 	popd
 }
