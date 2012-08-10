@@ -3,7 +3,7 @@ set -e
 
 init_target (){
 	echo "Cleaning Target $1"
-	rm -r targets/$1 || true
+	rm -rf targets/$1 || true
 	mkdir -p targets/$1/_jhbuild/manifests
 	cp -a targets/gimp-common/_jhbuild/manifests/* targets/$1/_jhbuild/manifests
 	cp -a targets/gimp-common/_jhbuild/packagedb.xml targets/$1/_jhbuild/

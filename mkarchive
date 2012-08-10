@@ -10,36 +10,36 @@ dostuff (){
 	pushd combined
 	pushd $f
 
-	rm -r _jhbuild
-	rm -r man
-	rm -r share/doc
-	rm -r share/gtk-doc
-	rm -r share/gtk-2.0/demo
-	rm -r share/icons
-	rm -r share/applications
-	rm -r share/info
-	rm -r share/man
-	rm -r share/gdb
-	rm -r share/gettext
+	rm -rf _jhbuild
+	rm -rf man
+	rm -rf share/doc
+	rm -rf share/gtk-doc
+	rm -rf share/gtk-2.0/demo
+	rm -rf share/icons
+	rm -rf share/applications
+	rm -rf share/info
+	rm -rf share/man
+	rm -rf share/gdb
+	rm -rf share/gettext
 
-	rm etc/gconf/2/path.jhbuild
+	rm -f etc/gconf/2/path.jhbuild
 
-	rm `find -name *.exe | sed -e /gimp/d -e /gspawn/d`
+	rm -f `find -name *.exe | sed -e /gimp/d -e /gspawn/d`
 
 	pushd bin
-	rm `ls | sed -e /.exe/d -e /.dll/d`
+	rm -f `ls | sed -e /.exe/d -e /.dll/d`
 	popd
 
-	rm `find -name *.html`
-	rm `find -name *.a`
-	rm `find -name *.def`
-	rm `find -name *.sh`
-	rm `find -name *.h`
-	rm `find -name *.c`
-	rm `find -name *.hxx`
-	rm `find -name *.pc`
-	rm `find -name *.m4`
-	rm `find -name *.manifest`
+	rm -f `find -name *.html`
+	rm -f `find -name *.a`
+	rm -f `find -name *.def`
+	rm -f `find -name *.sh`
+	rm -f `find -name *.h`
+	rm -f `find -name *.c`
+	rm -f `find -name *.hxx`
+	rm -f `find -name *.pc`
+	rm -f `find -name *.m4`
+	rm -f `find -name *.manifest`
 
 	find -depth -type d -empty -exec rmdir {} \;
 
@@ -53,14 +53,14 @@ start $2" | unix2dos > run_gimp.bat
 	if [ -e $f/bin/gimp-2.*.exe ]; then
 		7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on $f.7z $f
 		cat ~/bin/7z.sfx $f.7z > $f.exe
-		rm $f.7z
+		rm -f $f.7z
 	else
 		echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 		echo "!!            GIMP EXECUTABLE NOT FOUND                !!"
 		echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	fi
 
-	rm -r $f
+	rm -rf $f
 
 	popd
 }
