@@ -20,9 +20,11 @@ flavour = os.environ.get('BUILD_FLAVOUR', 'rls')
 if flavour == 'rls':
         flavour_ext = 'rls'
         flavour_opt = '--enable-debug=no'
+        flavour_cflags = ""
 else:
         flavour_ext = 'dbg'
-        flavour_opt = "--enable-debug=yes CFLAGS='-g -O0' CXXFLAGS='-g -O0'"
+        flavour_opt = "--enable-debug=yes"
+        flavour_cflags = " -g -O0"
 
 
 # checkoutroot: path to download packages elsewhere
@@ -74,6 +76,9 @@ os.environ['ARFLAGS']  = '-ar rcs'
 os.environ['INSTALL']  = os.path.expanduser('~/bin/prefix/bin/install-check')
 
 os.environ['CFLAGS']  += os.environ.get('MINGW_CFLAGS', '')
+
+os.environ['CFLAGS']  += flavour_cflags
+os.environ['CXXFLAGS']+= flavour_cflags
 
 #Don't install libraries in lib64, even if compiling on 64-bit machines
 use_lib64 = False
