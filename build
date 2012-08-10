@@ -9,6 +9,8 @@ init_target (){
 	cp -a targets/gimp-common/_jhbuild/packagedb.xml targets/$1/_jhbuild/
 }
 
+chmod a-w win32.cache
+
 export BUILD_FLAVOUR=rls
 
 export MODULE=gimp-common
@@ -21,3 +23,5 @@ jhbuild --file=build.jhbuildrc $*
 ./targetisunchanged gimp-common gimp-dev || init_target gimp-dev
 export MODULE=gimp-dev
 jhbuild --file=build.jhbuildrc $*
+
+chmod u+w win32.cache
