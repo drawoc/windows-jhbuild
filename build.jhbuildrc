@@ -12,9 +12,10 @@
 
 moduleset = os.environ['PWD']+'/gimp.moduleset'
 
-modules = [os.environ['MODULE']]
+module = os.environ.get('MODULE', 'gimp-dev')
+modules = [module]
 
-flavour = os.environ['BUILD_FLAVOUR']
+flavour = os.environ.get('BUILD_FLAVOUR', 'rls')
 
 if flavour == 'rls':
         flavour_ext = 'rls'
@@ -27,7 +28,7 @@ else:
 # checkoutroot: path to download packages elsewhere
 # prefix:       target path to install the compiled binaries
 checkoutroot = os.environ['PWD']+'/checkout/'
-prefix = os.environ['PWD']+'/targets/'+os.environ['MODULE']+'/'
+prefix = os.environ['PWD']+'/targets/'+module+'/'
 
 os.environ['prefix'] = prefix
 

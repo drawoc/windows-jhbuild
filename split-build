@@ -11,8 +11,6 @@ init_target (){
 
 chmod a-w win32.cache
 
-export BUILD_FLAVOUR=rls
-
 export MODULE=gimp-common
 jhbuild --file=build.jhbuildrc $*
 
