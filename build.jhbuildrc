@@ -75,6 +75,11 @@ os.environ['INSTALL']  = os.path.expanduser('~/bin/prefix/bin/install-check')
 #Don't install libraries in lib64, even if compiling on 64-bit machines
 use_lib64 = False
 
+#Make scripts run with the interpreter that's running this script
+#(required wherever /usr/bin/python is python 3)
+import sys
+os.environ['PYTHON'] = sys.executable
+
 #Ensure that gimp doesn't get the host machine's freetype-config
 os.environ['FREETYPE_CONFIG'] = os.path.join(searchprefix, 'bin', 'freetype-config')
 
