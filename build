@@ -1,7 +1,5 @@
 #!/bin/sh
 set -e
-mkdir -p logs
-((
 
 init_target (){
 	echo "Cleaning Target $1"
@@ -23,5 +21,3 @@ jhbuild --file=build.jhbuildrc $*
 ./targetisunchanged gimp-common gimp-dev || init_target gimp-dev
 export MODULE=gimp-dev
 jhbuild --file=build.jhbuildrc $*
-
-) 2>&1) | tee logs/buildlog-`date +%s`
