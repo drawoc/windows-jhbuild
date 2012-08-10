@@ -66,11 +66,13 @@ os.environ['RC'] = os.environ['WINDRES']
 
 #Exporting tool flags enviroment variables
 os.environ['LDFLAGS']  = '-L'+searchprefix+'/lib'
-os.environ['CFLAGS']   = '-mms-bitfields -march=i686 -I'+searchprefix+'/include -DLIBXML_STATIC'
+os.environ['CFLAGS']   = '-mms-bitfields -march=i686 -I'+searchprefix+'/include -DLIBXML_STATIC '
 os.environ['CPPFLAGS'] = '-I'+searchprefix+'/include'
 os.environ['CXXFLAGS'] = '-mms-bitfields -march=i686'
 os.environ['ARFLAGS']  = '-ar rcs'
 os.environ['INSTALL']  = os.path.expanduser('~/bin/prefix/bin/install-check')
+
+os.environ['CFLAGS']  += os.environ.get('MINGW_CFLAGS', '')
 
 #Don't install libraries in lib64, even if compiling on 64-bit machines
 use_lib64 = False
