@@ -46,7 +46,7 @@ addpath('PKG_CONFIG_LIBDIR', os.path.join(searchprefix, 'lib', 'pkgconfig'))
 addpath('PKG_CONFIG_LIBDIR', os.path.join(searchprefix, 'share', 'pkgconfig'))
 
 #Prefix for all the tools
-mingw_tool_prefix = os.environ.get('MINGW_TOOLPREFIX', '/usr/bin/' + os.environ['TARGET'] + '-')
+mingw_tool_prefix = os.environ.get('MINGW_TOOLPREFIX', os.environ.get('MINGW_LOCATION', '/usr') + '/bin/' + os.environ['TARGET'] + '-')
 
 mingw_tools = {'ADDR2LINE': 'addr2line',
 	'AS': 'as', 'CC': 'gcc', 'CPP': 'cpp',
