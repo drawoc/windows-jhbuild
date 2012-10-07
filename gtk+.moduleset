@@ -6,6 +6,8 @@
 
 	<repository type="tarball" name="cairographics.org"
 		href="http://cairographics.org/releases/" />
+	<repository type="tarball" name="freedesktop.org"
+		href="http://www.freedesktop.org/software/" />
 	<repository type="tarball" name="gnome.org"
 		href="http://ftp.gnome.org/pub/gnome/sources/" />
 
@@ -32,25 +34,28 @@
 </tarball>
 
 <autotools id="pango" autogen-sh="configure">
-	<branch version="1.30.1" repo="gnome.org"
-			module="pango/1.30/pango-1.30.1.tar.xz"
-			hash="sha256:3a8c061e143c272ddcd5467b3567e970cfbb64d1d1600a8f8e62435556220cbe">
+	<branch version="1.32.1" repo="gnome.org"
+			module="pango/1.32/pango-1.32.1.tar.xz"
+			hash="sha256:484babf7e1ac4bf959a0babe8168f180acb516932d70e2985de5f6e2961fcd82">
 	</branch>
 	<dependencies>
 		<dep package="cairo"/>
 		<dep package="pixman"/>
 		<dep package="glib"/>
 		<dep package="fontconfig"/>
+		<dep package="harfbuzz"/>
 	</dependencies>
 </autotools>
 
-<tarball id="atk" version="2.4.0" makeinstallargs=" install -j1">
-	<source href="http://ftp.gnome.org/pub/gnome/sources/atk/2.4/atk-2.4.0.tar.xz"
-		sha256sum="091e9ce975a9fbbc7cd8fa64c9c389ffb7fa6cdde58b6d5c01b2c267093d888d"/>
+<autotools id="atk" autogen-sh="configure" makeinstallargs="install -j1">
+	<branch version="2.6.0" repo="gnome.org"
+			module="atk/2.6/atk-2.6.0.tar.xz"
+			hash="sha256:eff663f90847620bb68c9c2cbaaf7f45e2ff44163b9ab3f10d15be763680491f">
+	</branch>
 	<dependencies>
 		<dep package="glib"/>
 	</dependencies>
-</tarball>
+</autotools>
 
 <tarball id="fontconfig" version="2.10.0" makeinstallargs=" install -j1">
 	<source href="http://www.fontconfig.org/release/fontconfig-2.10.0.tar.bz2"/>
@@ -67,6 +72,17 @@
 	</dependencies>
 </tarball>
 
+<autotools id="harfbuzz" autogen-sh="configure">
+	<branch version="0.9.4" repo="freedesktop.org"
+			module="harfbuzz/release/harfbuzz-0.9.4.tar.bz2"
+			hash="sha256:2572f9a810d17a735ef565115463827d075af2371ee5b68e6d77231381f4bddc">
+	</branch>
+	<suggests>
+		<dep package="cairo"/>
+		<dep package="freetype"/>
+	</suggests>
+</autotools>
+
 <tarball id="libxml2" version="2.8.0">
 	<source href="ftp://xmlsoft.org/libxml2/libxml2-2.8.0.tar.gz"/>
 	<dependencies>
@@ -74,22 +90,23 @@
 	</dependencies>
 </tarball>
 
-<tarball id="gdk-pixbuf" version="2.26.0">
-	<source href="http://ftp.gnome.org/pub/gnome/sources/gdk-pixbuf/2.26/gdk-pixbuf-2.26.0.tar.xz"
-		sha256sum="a60af12b58d9cc15ba4c680c6730ce5d38e8d664af1d575a379385b94b4ec7ba"/>
+<autotools id="gdk-pixbuf" autogen-sh="configure">
+	<branch version="2.26.4" repo="gnome.org"
+			module="gdk-pixbuf/2.26/gdk-pixbuf-2.26.4.tar.xz"
+			hash="sha256:a91458645f078debf204fef8bb06b30f356fcb5d48f65395132a5dba2b3510be">
+	</branch>
 	<dependencies>
 		<dep package="glib"/>
 		<dep package="imglibs"/>
 	</dependencies>
-</tarball>
+</autotools>
 
-<tarball id="gtk+" version="2.24.11" makeinstallargs="install -j1">
-	<source href="http://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/gtk+-2.24.11.tar.xz"
-		sha256sum="328b4ea19a61040145e777e2ac49820968a382ac8581a380c9429897881812a9"/>
-	<patches>
-		<!-- Local patch -->
+<autotools id="gtk+" autogen-sh="configure" makeinstallargs="install -j1">
+	<branch version="2.24.13" repo="gnome.org"
+			module="gtk+/2.24/gtk+-2.24.13.tar.xz"
+			hash="sha256:35e1a01e46b02970b02ee9f299390d0aa57c1215ad2667bcd584b72f4ea6513d">
 		<patch file="gtk-2.24.11-link-to-gmodule.patch" strip="0"/>
-	</patches>
+	</branch>
 	<dependencies>
 		<dep package="glib"/>
 		<dep package="gdk-pixbuf"/>
@@ -97,6 +114,6 @@
 		<dep package="atk"/>
 		<dep package="pango"/>
 	</dependencies>
-</tarball>
+</autotools>
 
 </moduleset>
