@@ -122,6 +122,7 @@ module_autogenargs['gettext']    = autogenargs + """ --without-emacs \
                                                      --enable-threads=win32"""
 
 module_autogenargs['glib']       = autogenargs + """ --disable-gtk-doc \
+                                                     --disable-modular-tests \
                                                      --cache-file=""" + os.environ['PWD'] + "/win32.cache"
 
 module_autogenargs['cairo']      = autogenargs + """ --enable-xlib=no \

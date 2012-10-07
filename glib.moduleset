@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <moduleset>
-
-<repository type="tarball" name="gnu.org" href="http://ftp.gnu.org/pub/gnu/" />
+	<repository type="tarball" name="gnu.org"
+		href="http://ftp.gnu.org/pub/gnu/" />
+	<repository type="tarball" name="gnome.org"
+		href="http://ftp.gnome.org/pub/gnome/sources/" />
 
 <autotools id="iconv" autogen-sh="configure">
 	<branch version="1.14" repo="gnu.org"
@@ -26,15 +28,17 @@
 		md5sum="f69b9693227d976835b4857b1ba7d0e3"/>
 </tarball>
 
-<tarball id="glib" version="2.32.3">
-	<source href="http://ftp.gnome.org/pub/gnome/sources/glib/2.32/glib-2.32.3.tar.xz"
-		sha256sum="b65ceb462807e4a2f91c95e4293ce6bbefca308cb44a1407bcfdd9e40363ff4d"/>
+<autotools id="glib" autogen-sh="configure">
+	<branch version="2.34.0" repo="gnome.org"
+			module="glib/2.34/glib-2.34.0.tar.xz"
+			hash="sha256:f69b112f8848be35139d9099b62bc81649241f78f6a775516f0d4c9b47f65144">
+	</branch>
 	<dependencies>
 		<dep package="gettext"/>
 		<dep package="iconv"/>
 		<dep package="zlib"/>
 		<dep package="libffi"/>
 	</dependencies>
-</tarball>
+</autotools>
 
 </moduleset>
