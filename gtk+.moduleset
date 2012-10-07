@@ -10,10 +10,11 @@
 		href="http://ftp.gnome.org/pub/gnome/sources/" />
 
 <autotools id="cairo" autogen-sh="configure">
-	<branch version="1.10.2" repo="cairographics.org"
-			module="cairo-1.10.2.tar.gz"
-			hash="sha1:ccce5ae03f99c505db97c286a0c9a90a926d3c6e">
-		<patch file="cairo-1-10-define-ffs.patch" strip="0"/>
+	<branch version="1.12.4" repo="cairographics.org"
+			module="cairo-1.12.4.tar.xz"
+			hash="sha1:f4158981ed01e73c94fb8072074b17feee61a68b">
+		<!-- From cairo git -->
+		<patch file="cairo-1.12.4-unmap-surface.patch" strip="1"/>
 	</branch>
 	<dependencies>
 		<dep package="zlib"/>
