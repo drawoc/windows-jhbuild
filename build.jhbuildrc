@@ -18,11 +18,11 @@ modules = [module]
 flavour = os.environ.get('BUILD_FLAVOUR', 'rls')
 
 if flavour == 'rls':
-        flavour_ext = 'rls'
+        flavour_ext = ''
         flavour_opt = '--enable-debug=no'
         flavour_cflags = ""
 else:
-        flavour_ext = 'dbg'
+        flavour_ext = '-dbg'
         flavour_opt = "--enable-debug=yes"
         flavour_cflags = " -g -O0"
 
@@ -30,11 +30,11 @@ else:
 # checkoutroot: path to download packages elsewhere
 # prefix:       target path to install the compiled binaries
 checkoutroot = os.environ['PWD']+'/checkout/'
-prefix = os.environ['PWD']+'/targets/'+module+'/'
+prefix = os.environ['PWD'] + '/targets/' + module + flavour_ext + '/'
 
 os.environ['prefix'] = prefix
 
-searchprefix = os.environ['PWD']+'/targets/gimp-common/'
+searchprefix = os.environ['PWD']+'/targets/gimp-common' + flavour_ext + '/'
 
 #The host value is obtained with the result of executing
 #the config.guess script on any of the packages.

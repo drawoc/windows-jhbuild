@@ -4,7 +4,7 @@ dostuff (){
 	f=$1-i686-`date +%Y-%m-%d`
 
 	mkdir -p combined/$f
-	cp -R -d --reflink=auto ./gimp-common/* combined/$f
+	cp -R -d --reflink=auto ./gimp-common$3/* combined/$f
 	cp -R -d --reflink=auto ./$1/* combined/$f
 
 	pushd combined
@@ -66,5 +66,7 @@ start $2" | unix2dos > run_gimp.bat
 }
 
 cd targets
-dostuff gimp-stable gimp-2.8.exe
-dostuff gimp-dev gimp-2.9.exe
+dostuff gimp-stable gimp-2.8.exe ""
+dostuff gimp-dev gimp-2.9.exe ""
+dostuff gimp-stable-dbg gimp-2.8.exe "-dbg"
+dostuff gimp-dev-dbg gimp-2.9.exe "-dbg"

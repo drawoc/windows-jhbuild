@@ -1,12 +1,18 @@
 #!/bin/sh
 set -e
 
+if [ "x$BUILD_FLAVOUR" == "xdbg" ]; then
+	EXT="-dbg"
+else
+	EXT=""
+fi
+
 init_target (){
 	echo "Cleaning Target $1"
 	rm -rf targets/$1 || true
 	mkdir -p targets/$1/_jhbuild/manifests
-	cp -a targets/gimp-common/_jhbuild/manifests/* targets/$1/_jhbuild/manifests
-	cp -a targets/gimp-common/_jhbuild/packagedb.xml targets/$1/_jhbuild/
+	cp -a targets/gimp-common$EXT/_jhbuild/manifests/* targets/$1/_jhbuild/manifests
+	cp -a targets/gimp-common$EXT/_jhbuild/packagedb.xml targets/$1/_jhbuild/
 }
 
 chmod a-w win32.cache
@@ -14,11 +20,11 @@ chmod a-w win32.cache
 export MODULE=gimp-common
 jhbuild --file=build.jhbuildrc $*
 
-./targetisunchanged gimp-common gimp-stable || init_target gimp-stable
+./targetisunchanged gimp-common$EXT gimp-stable || init_target gimp-stable
 export MODULE=gimp-stable
 jhbuild --file=build.jhbuildrc $* build --start-at=gimp-common
 
-./targetisunchanged gimp-common gimp-dev || init_target gimp-dev
+./targetisunchanged gimp-common$EXT gimp-dev || init_target gimp-dev
 export MODULE=gimp-dev
 jhbuild --file=build.jhbuildrc $* build --start-at=gimp-common
 
