@@ -59,12 +59,15 @@
 	</dependencies>
 </autotools>
 
-<tarball id="fontconfig" version="2.10.0" makeinstallargs=" install -j1">
-	<source href="http://www.fontconfig.org/release/fontconfig-2.10.0.tar.bz2"/>
+<autotools id="fontconfig" autogen-sh="configure" makeinstallargs="install -j1">
+	<branch version="2.10.1" repo="freedesktop.org"
+			module="fontconfig/release/fontconfig-2.10.1.tar.bz2"
+			hash="sha256:30b516db8852287cf2feb21d7d777e539e4cdf9b4535f6d2377afbb279f06a33">
+	</branch>
 	<dependencies>
 		<dep package="freetype"/>
 	</dependencies>
-</tarball>
+</autotools>
 
 <autotools id="freetype" autogen-sh="configure">
 	<branch version="2.4.10" repo="savannah.gnu.org"
