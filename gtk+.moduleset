@@ -26,9 +26,9 @@
 	</dependencies>
 </autotools>
 
-<tarball id="pixman" version="0.26.2">
-	<source href="http://cairographics.org/releases/pixman-0.26.2.tar.gz"
-		sha1sum="3c7d72b5b52e6d301efc68aa480f0737a641bdd3"/>
+<tarball id="pixman" version="0.28.0">
+	<source href="http://cairographics.org/releases/pixman-0.28.0.tar.gz"
+		sha1sum="79828c1a69b459c8cc7d468dd09e2b11ecdc9c19"/>
 	<dependencies>
 	</dependencies>
 </tarball>
