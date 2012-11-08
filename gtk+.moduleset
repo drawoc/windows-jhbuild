@@ -10,6 +10,8 @@
 		href="http://www.freedesktop.org/software/" />
 	<repository type="tarball" name="gnome.org"
 		href="http://ftp.gnome.org/pub/gnome/sources/" />
+	<repository type="tarball" name="savannah.gnu.org"
+		href="http://download.savannah.gnu.org/releases/" />
 	<repository type="tarball" name="xmlsoft.org"
 		href="ftp://xmlsoft.org/" />
 
@@ -64,13 +66,16 @@
 	</dependencies>
 </tarball>
 
-<tarball id="freetype" version="2.4.2">
-	<source href="http://download.savannah.gnu.org/releases/freetype/freetype-2.4.2.tar.gz" md5sum="5a3920aa1a8a0f3734612e8729df54d8"/>
+<autotools id="freetype" autogen-sh="configure">
+	<branch version="2.4.10" repo="savannah.gnu.org"
+			module="freetype/freetype-2.4.10.tar.bz2"
+			hash="sha256:0c8e242c33c45928de560d7d595db06feb41d1b22167e37260ceabe72f9e992f">
+	</branch>
 	<dependencies>
 		<dep package="bzip2"/>
 		<dep package="libxml2"/>
 	</dependencies>
-</tarball>
+</autotools>
 
 <autotools id="harfbuzz" autogen-sh="configure">
 	<branch version="0.9.4" repo="freedesktop.org"
