@@ -1,0 +1,11 @@
+--- configure.ac.old	2012-11-16 22:16:44.796396000 -0500
++++ configure.ac	2012-11-16 23:01:57.915536469 -0500
+@@ -191,7 +191,7 @@
+ 
+ dnl ===========================================================================
+ 
+-AC_CHECK_HEADERS(usp10.h windows.h, have_uniscribe=true, have_uniscribe=false)
++have_uniscribe=false
+ if $have_uniscribe; then
+ 	UNISCRIBE_CFLAGS=
+ 	UNISCRIBE_LIBS="-lusp10 -lgdi32"
