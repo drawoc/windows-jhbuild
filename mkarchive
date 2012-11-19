@@ -45,7 +45,6 @@ dostuff (){
 
 	echo "@echo off
 SET PATH=%~dp0bin\\
-SET BABL_PATH=%~dp0lib\babl-0.1\\
 start $2" | unix2dos > run_gimp.bat
 
 	popd
