@@ -81,9 +81,9 @@
 </autotools>
 
 <autotools id="harfbuzz">
-	<branch version="0.9.6" repo="freedesktop.org"
-			module="harfbuzz/release/harfbuzz-0.9.6.tar.bz2"
-			hash="sha256:394a849d6061993018754b0cc04110891ad215e3df3f6953b75dcc55a11f9d9b">
+	<branch version="0.9.4" repo="freedesktop.org"
+			module="harfbuzz/release/harfbuzz-0.9.4.tar.bz2"
+			hash="sha256:2572f9a810d17a735ef565115463827d075af2371ee5b68e6d77231381f4bddc">
 		<patch file="harfbuzz-disable-uniscribe.patch" strip="0"/>
 	</branch>
 	<suggests>
