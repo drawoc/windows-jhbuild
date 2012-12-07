@@ -2,6 +2,8 @@
 <moduleset>
 	<repository type="git" name="git.gnome.org" default="yes"
 		href="git://git.gnome.org/"/>
+	<repository type="tarball" name="sf.net"
+		href="http://downloads.sourceforge.net/project/" />
 
 	<include href="gtk+.moduleset"/>
 
@@ -26,6 +28,13 @@
 	</dependencies>
 </metamodule>
 
+<autotools id="lcms2" autogen-sh="configure">
+	<branch version="2.4" repo="sf.net"
+			module="lcms/lcms/2.4/lcms2-2.4.tar.gz"
+			hash="sha256:2a514d10eff26901505c191a15c2588c751eb7fb86577118f6c235aff0be37e8">
+	</branch>
+</autotools>
+
 <autotools id="gimp-stable">
 	<branch module="gimp" revision="gimp-2-8"/>
 	<dependencies>
@@ -37,6 +46,7 @@
 	<branch module="gimp" revision="master"/>
 	<dependencies>
 		<dep package="gimp-common"/>
+		<dep package="lcms2"/>
 	</dependencies>
 </autotools>
 
