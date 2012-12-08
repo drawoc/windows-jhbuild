@@ -2,38 +2,9 @@
 <moduleset>
 	<repository type="git" name="git.gnome.org" default="yes"
 		href="git://git.gnome.org/"/>
-	<repository type="tarball" name="gnome.org"
-		href="http://ftp.gnome.org/pub/gnome/sources/" />
-	<repository type="tarball" name="sf.net"
-		href="http://downloads.sourceforge.net/project/" />
 
+	<include href="misclibs.moduleset"/>
 	<include href="gtk+.moduleset"/>
-
-<autotools id="libcroco" autogen-sh="configure">
-	<branch version="0.6.8" repo="gnome.org"
-			module="libcroco/0.6/libcroco-0.6.8.tar.xz"
-			hash="sha256:ea6e1b858c55219cefd7109756bff5bc1a774ba7a55f7d3ccd734d6b871b8570">
-	</branch>
-	<dependencies>
-		<dep package="glib"/>
-		<dep package="libxml2"/>
-	</dependencies>
-</autotools>
-
-<autotools id="librsvg" autogen-sh="configure">
-	<branch version="2.36.4" repo="gnome.org"
-			module="librsvg/2.36/librsvg-2.36.4.tar.xz"
-			hash="sha256:1021935204798f4f0ad3004a09b583668ea94a48593461b147fdcff68a18e6c2">
-	</branch>
-	<dependencies>
-		<dep package="glib"/>
-		<dep package="gdk-pixbuf"/>
-		<dep package="libxml2"/>
-		<dep package="cairo"/>
-		<dep package="pango"/>
-		<dep package="libcroco"/>
-	</dependencies>
-</autotools>
 
 <autotools id="babl">
 	<branch/>
@@ -56,20 +27,6 @@
 		<dep package="librsvg"/>
 	</dependencies>
 </metamodule>
-
-<autotools id="lcms" autogen-sh="configure">
-	<branch version="1.19" repo="sf.net"
-			module="lcms/lcms/1.19/lcms-1.19.tar.gz"
-			hash="sha256:80ae32cb9f568af4dc7ee4d3c05a4c31fc513fc3e31730fed0ce7378237273a9">
-	</branch>
-</autotools>
-
-<autotools id="lcms2" autogen-sh="configure">
-	<branch version="2.4" repo="sf.net"
-			module="lcms/lcms/2.4/lcms2-2.4.tar.gz"
-			hash="sha256:2a514d10eff26901505c191a15c2588c751eb7fb86577118f6c235aff0be37e8">
-	</branch>
-</autotools>
 
 <autotools id="gimp-stable">
 	<branch module="gimp" revision="gimp-2-8"/>
