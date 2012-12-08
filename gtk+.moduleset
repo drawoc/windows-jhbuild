@@ -63,6 +63,8 @@
 	<branch version="2.10.1" repo="freedesktop.org"
 			module="fontconfig/release/fontconfig-2.10.1.tar.bz2"
 			hash="sha256:30b516db8852287cf2feb21d7d777e539e4cdf9b4535f6d2377afbb279f06a33">
+		<!-- local config patch -->
+		<patch file="fontconfig-fix-config-dir.patch" strip="0"/>
 	</branch>
 	<dependencies>
 		<dep package="freetype"/>
