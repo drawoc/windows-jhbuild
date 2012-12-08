@@ -29,9 +29,9 @@
 </tarball>
 
 <autotools id="glib" autogen-sh="configure">
-	<branch version="2.34.0" repo="gnome.org"
-			module="glib/2.34/glib-2.34.0.tar.xz"
-			hash="sha256:f69b112f8848be35139d9099b62bc81649241f78f6a775516f0d4c9b47f65144">
+	<branch version="2.35.2" repo="gnome.org"
+			module="glib/2.35/glib-2.35.2.tar.xz"
+			hash="sha256:84fffa2041850352b83a7b27c127f1c4e8b3d169aa3a000b100820ba10f8c19e">
 	</branch>
 	<dependencies>
 		<dep package="gettext"/>
