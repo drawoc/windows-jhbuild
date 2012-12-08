@@ -2,10 +2,38 @@
 <moduleset>
 	<repository type="git" name="git.gnome.org" default="yes"
 		href="git://git.gnome.org/"/>
+	<repository type="tarball" name="gnome.org"
+		href="http://ftp.gnome.org/pub/gnome/sources/" />
 	<repository type="tarball" name="sf.net"
 		href="http://downloads.sourceforge.net/project/" />
 
 	<include href="gtk+.moduleset"/>
+
+<autotools id="libcroco" autogen-sh="configure">
+	<branch version="0.6.8" repo="gnome.org"
+			module="libcroco/0.6/libcroco-0.6.8.tar.xz"
+			hash="sha256:ea6e1b858c55219cefd7109756bff5bc1a774ba7a55f7d3ccd734d6b871b8570">
+	</branch>
+	<dependencies>
+		<dep package="glib"/>
+		<dep package="libxml2"/>
+	</dependencies>
+</autotools>
+
+<autotools id="librsvg" autogen-sh="configure">
+	<branch version="2.36.4" repo="gnome.org"
+			module="librsvg/2.36/librsvg-2.36.4.tar.xz"
+			hash="sha256:1021935204798f4f0ad3004a09b583668ea94a48593461b147fdcff68a18e6c2">
+	</branch>
+	<dependencies>
+		<dep package="glib"/>
+		<dep package="gdk-pixbuf"/>
+		<dep package="libxml2"/>
+		<dep package="cairo"/>
+		<dep package="pango"/>
+		<dep package="libcroco"/>
+	</dependencies>
+</autotools>
 
 <autotools id="babl">
 	<branch/>
@@ -25,6 +53,7 @@
 	<dependencies>
 		<dep package="gtk+"/>
 		<dep package="gegl"/>
+		<dep package="librsvg"/>
 	</dependencies>
 </metamodule>
 

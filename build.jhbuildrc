@@ -154,6 +154,8 @@ module_autogenargs['fontconfig'] = autogenargs + """ --with-arch=i686 \
 module_autogenargs['libxml2']    = autogenargs + """ --with-python=no \
                                                      --with-iconv=yes"""
 
+module_autogenargs['librsvg']    = autogenargs + """ --enable-introspection=no"""
+
 module_autogenargs['babl']       = autogenargs + """ --enable-introspection=no"""
 
 module_autogenargs['gegl']       = autogenargs + """ --enable-introspection=no \
