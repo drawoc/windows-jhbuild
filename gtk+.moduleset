@@ -36,9 +36,9 @@
 </tarball>
 
 <autotools id="pango" autogen-sh="configure">
-	<branch version="1.32.1" repo="gnome.org"
-			module="pango/1.32/pango-1.32.1.tar.xz"
-			hash="sha256:484babf7e1ac4bf959a0babe8168f180acb516932d70e2985de5f6e2961fcd82">
+	<branch version="1.32.4" repo="gnome.org"
+			module="pango/1.32/pango-1.32.4.tar.xz"
+			hash="sha256:9895b2e6572c3b3e0cc1c174b8bf55791a47de1995af21a1787f6c573b4b58db">
 	</branch>
 	<dependencies>
 		<dep package="cairo"/>
@@ -83,9 +83,9 @@
 </autotools>
 
 <autotools id="harfbuzz">
-	<branch version="0.9.4" repo="freedesktop.org"
-			module="harfbuzz/release/harfbuzz-0.9.4.tar.bz2"
-			hash="sha256:2572f9a810d17a735ef565115463827d075af2371ee5b68e6d77231381f4bddc">
+	<branch version="0.9.9" repo="freedesktop.org"
+			module="harfbuzz/release/harfbuzz-0.9.9.tar.bz2"
+			hash="sha256:3d8dd4ebbc38da011485ef181f8ff072b4b0d7e305bbda19b355f217d25169cf">
 		<patch file="harfbuzz-disable-uniscribe.patch" strip="0"/>
 	</branch>
 	<suggests>
