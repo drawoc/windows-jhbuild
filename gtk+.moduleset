@@ -28,12 +28,12 @@
 	</dependencies>
 </autotools>
 
-<tarball id="pixman" version="0.28.0">
-	<source href="http://cairographics.org/releases/pixman-0.28.0.tar.gz"
-		sha1sum="79828c1a69b459c8cc7d468dd09e2b11ecdc9c19"/>
-	<dependencies>
-	</dependencies>
-</tarball>
+<autotools id="pixman" autogen-sh="configure">
+	<branch version="0.28.2" repo="cairographics.org"
+			module="pixman-0.28.2.tar.gz"
+			hash="sha1:fd81193e3d970a4a44f8c3818fc10cb449fdca8b">
+	</branch>
+</autotools>
 
 <autotools id="pango" autogen-sh="configure">
 	<branch version="1.32.4" repo="gnome.org"
