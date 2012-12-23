@@ -47,4 +47,11 @@
 	</branch>
 </autotools>
 
+<autotools id="libexif" autogen-sh="configure">
+	<branch version="0.6.21" repo="sf.net"
+			module="libexif/libexif/0.6.21/libexif-0.6.21.tar.bz2"
+			hash="sha1:a52219b12dbc8d33fc096468591170fda71316c0">
+	</branch>
+</autotools>
+
 </moduleset>

@@ -25,6 +25,7 @@
 		<dep package="gtk+"/>
 		<dep package="gegl"/>
 		<dep package="librsvg"/>
+		<dep package="libexif"/>
 	</dependencies>
 </metamodule>
 
