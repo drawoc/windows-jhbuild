@@ -3,8 +3,9 @@
 	<repository type="git" name="git.gnome.org" default="yes"
 		href="git://git.gnome.org/"/>
 
-	<include href="misclibs.moduleset"/>
 	<include href="gtk+.moduleset"/>
+	<include href="webkitgtk.moduleset"/>
+	<include href="misclibs.moduleset"/>
 
 <autotools id="babl">
 	<branch/>
@@ -26,6 +27,7 @@
 		<dep package="gegl"/>
 		<dep package="librsvg"/>
 		<dep package="libexif"/>
+		<dep package="webkitgtk"/>
 	</dependencies>
 </metamodule>
 

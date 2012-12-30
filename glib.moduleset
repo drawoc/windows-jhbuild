@@ -32,6 +32,7 @@
 	<branch version="2.35.2" repo="gnome.org"
 			module="glib/2.35/glib-2.35.2.tar.xz"
 			hash="sha256:84fffa2041850352b83a7b27c127f1c4e8b3d169aa3a000b100820ba10f8c19e">
+		<patch file="glib-move-G_END_DECLS-to-the-end-of-gutils.h.patch" strip="1"/>
 	</branch>
 	<dependencies>
 		<dep package="gettext"/>

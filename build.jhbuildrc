@@ -72,7 +72,6 @@ os.environ['LDFLAGS']  = '-L'+searchprefix+'/lib'
 os.environ['CFLAGS']   = '-mms-bitfields -march=i686 -I'+searchprefix+'/include -DLIBXML_STATIC '
 os.environ['CPPFLAGS'] = '-I'+searchprefix+'/include'
 os.environ['CXXFLAGS'] = '-mms-bitfields -march=i686 -static-libgcc'
-os.environ['ARFLAGS']  = '-ar rcs'
 os.environ['INSTALL']  = os.path.expanduser('~/bin/prefix/bin/install-check')
 
 os.environ['CFLAGS']  += os.environ.get('MINGW_CFLAGS', '')
@@ -156,6 +155,25 @@ module_autogenargs['libxml2']    = autogenargs + """ --with-python=no \
 
 module_autogenargs['librsvg']    = autogenargs + """ --enable-introspection=no"""
 
+module_autogenargs['libsoup']    = autogenargs + """ --without-apache-httpd"""
+
+module_autogenargs['webkitgtk']  = autogenargs + """ --with-gtk=2.0 \
+                                                     --with-target=win32 \
+                                                     --disable-webkit2 \
+                                                     --disable-xslt \
+                                                     --disable-geolocation \
+                                                     --disable-video \
+                                                     --disable-spellcheck \
+                                                     --disable-fast-malloc \
+                                                     --disable-jit \
+                                                     --disable-debug \
+                                                     --disable-debug-symbols \
+                                                     --disable-debug-features \
+                                                     --with-unicode-backend=glib \
+\
+                                                     --disable-gamepad \
+                                                     --with-acceleration_backend=none"""
+
 module_autogenargs['babl']       = autogenargs + """ --enable-introspection=no"""
 
 module_autogenargs['gegl']       = autogenargs + """ --enable-introspection=no \
@@ -168,3 +186,11 @@ module_autogenargs['gimp-stable']= autogenargs + """ --disable-python \
 module_autogenargs['gimp-dev']   = autogenargs + """ --disable-python \
                                                      --disable-gtk-doc \
                                                      --without-wmf """
+
+module_makeargs['pthreads-win32']= " CROSS=" + mingw_tool_prefix
+module_extra_env.update (
+{'pthreads-win32': 
+	{'PREFIX': prefix},
+ 'webkitgtk':
+	{'CXXFLAGS': os.environ['CXXFLAGS'] + ' -I' + checkoutroot + 'pthreads-w32-2-9-1-release -w'},
+})
