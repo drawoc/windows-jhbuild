@@ -71,7 +71,7 @@ os.environ['RC'] = os.environ['WINDRES']
 os.environ['LDFLAGS']  = '-L'+searchprefix+'/lib'
 os.environ['CFLAGS']   = '-mms-bitfields -march=i686 -I'+searchprefix+'/include -DLIBXML_STATIC '
 os.environ['CPPFLAGS'] = '-I'+searchprefix+'/include'
-os.environ['CXXFLAGS'] = '-mms-bitfields -march=i686 -static-libgcc'
+os.environ['CXXFLAGS'] = '-mms-bitfields -march=i686'
 os.environ['INSTALL']  = os.path.expanduser('~/bin/prefix/bin/install-check')
 
 os.environ['CFLAGS']  += os.environ.get('MINGW_CFLAGS', '')

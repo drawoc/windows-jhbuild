@@ -1,5 +1,11 @@
 #!/bin/bash
 
+dll_loc=${DLL_LOC:-/usr/lib/gcc/i686-w64-mingw32/4.6}
+
+add_dll (){
+	cp --reflink=auto $dll_loc/$1 ./bin/
+}
+
 dostuff (){
 	f=$1-i686-`date +%Y-%m-%d`
 
@@ -25,6 +31,9 @@ dostuff (){
 	rm -f etc/gconf/2/path.jhbuild
 
 	rm -f `find -name *.exe | sed -e /gimp/d -e /gspawn/d`
+
+	add_dll libstdc++-6.dll
+	add_dll libgcc_s_sjlj-1.dll
 
 	pushd bin
 	rm -f `ls | sed -e /.exe/d -e /.dll/d`
