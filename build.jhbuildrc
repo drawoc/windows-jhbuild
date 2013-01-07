@@ -188,9 +188,12 @@ module_autogenargs['gimp-dev']   = autogenargs + """ --disable-python \
                                                      --without-wmf """
 
 module_makeargs['pthreads-win32']= " CROSS=" + mingw_tool_prefix
+module_makeargs['libmng'] = " CC=" + mingw_tool_prefix + "gcc"
 module_extra_env.update (
 {'pthreads-win32': 
 	{'PREFIX': prefix},
  'webkitgtk':
 	{'CXXFLAGS': os.environ['CXXFLAGS'] + ' -I' + checkoutroot + 'pthreads-w32-2-9-1-release -w'},
+ 'libmng': 
+	{'PREFIX': prefix, 'CFLAGS': os.environ['CFLAGS'] + os.environ['LDFLAGS'], 'LIBRARY_PATH': searchprefix + '/lib'},
 })

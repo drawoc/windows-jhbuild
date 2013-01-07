@@ -3,6 +3,8 @@
 	<repository type="tarball" name="jasper" href="http://www.ece.uvic.ca/~frodo/jasper/software/" />
 	<repository type="tarball" name="osgeo.org"
 		href="http://download.osgeo.org/" />
+	<repository type="tarball" name="sf.net"
+		href="http://downloads.sourceforge.net/project/" />
 
 <tarball id="zlib" version="1.2.7" makeargs="-f win32/Makefile.gcc -e zlib1.dll SHARED_MODE=1" makeinstallargs="-f win32/Makefile.gcc -e install SHARED_MODE=1">
 	<source href="http://zlib.net/zlib-1.2.7.tar.gz"
@@ -53,5 +55,19 @@
 		<dep package="jasper"/>
 	</dependencies>
 </metamodule>
+
+<autotools id="libmng"  autogen-sh=" || true" makeargs="-f makefiles/makefile.mingwdll" makeinstallargs="-f makefiles/makefile.mingwdll install">
+	<branch version="1.0.10" repo="sf.net"
+			module="libmng/libmng-devel/1.0.10/libmng-1.0.10.tar.gz"
+			hash="sha1:78ad516a1de79d00de720bf2a7c9afea2c896b09">
+		<patch file="libmng-1.0.10-mingw.patch" strip="1"/>
+		<patch file="libmng-1.0.9-dont-leak-zlib-streams.diff" strip="0"/>
+		<patch file="libmng-change-locations.patch" strip="1"/>
+	</branch>
+	<dependencies>
+		<dep package="zlib"/>
+		<dep package="jpeg"/>
+	</dependencies>
+</autotools>
 
 </moduleset>
