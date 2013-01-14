@@ -195,5 +195,5 @@ module_extra_env.update (
  'webkitgtk':
 	{'CXXFLAGS': os.environ['CXXFLAGS'] + ' -I' + checkoutroot + 'pthreads-w32-2-9-1-release -w'},
  'libmng': 
-	{'PREFIX': prefix, 'CFLAGS': os.environ['CFLAGS'] + os.environ['LDFLAGS'], 'LIBRARY_PATH': searchprefix + '/lib'},
+	{'PREFIX': prefix, 'CFLAGS': os.environ['CFLAGS'] + os.environ['LDFLAGS']},
 })
