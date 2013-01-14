@@ -61,7 +61,7 @@
 			module="libmng/libmng-devel/1.0.10/libmng-1.0.10.tar.gz"
 			hash="sha1:78ad516a1de79d00de720bf2a7c9afea2c896b09">
 		<patch file="libmng-1.0.10-mingw.patch" strip="1"/>
-		<patch file="libmng-1.0.9-dont-leak-zlib-streams.diff" strip="0"/>
+		<patch file="libmng-1.0.9-dont-leak-zlib-streams.patch" strip="0"/>
 		<patch file="libmng-change-locations.patch" strip="1"/>
 	</branch>
 	<dependencies>
