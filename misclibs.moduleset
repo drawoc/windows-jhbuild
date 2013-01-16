@@ -4,6 +4,8 @@
 		href="http://ftp.gnome.org/pub/gnome/sources/" />
 	<repository type="tarball" name="sf.net"
 		href="http://downloads.sourceforge.net/project/" />
+	<repository type="tarball" name="pkg-isocodes"
+		href="http://pkg-isocodes.alioth.debian.org/downloads/" />
 
 	<include href="gtk+.moduleset"/>
 
@@ -51,6 +53,13 @@
 	<branch version="0.6.21" repo="sf.net"
 			module="libexif/libexif/0.6.21/libexif-0.6.21.tar.bz2"
 			hash="sha1:a52219b12dbc8d33fc096468591170fda71316c0">
+	</branch>
+</autotools>
+
+<autotools id="iso-codes" autogen-sh="configure">
+	<branch version="3.40" repo="pkg-isocodes"
+			module="iso-codes-3.40.tar.xz"
+			hash="sha1:02b1b5b6fb476bf7dd6251bfbd085c3ba4feaa2a">
 	</branch>
 </autotools>
 

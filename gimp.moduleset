@@ -28,6 +28,7 @@
 		<dep package="librsvg"/>
 		<dep package="libexif"/>
 		<dep package="libmng"/>
+		<dep package="iso-codes"/>
 		<dep package="webkitgtk"/>
 	</dependencies>
 </metamodule>
