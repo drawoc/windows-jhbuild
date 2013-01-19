@@ -29,6 +29,7 @@
 		<dep package="libexif"/>
 		<dep package="libmng"/>
 		<dep package="iso-codes"/>
+		<dep package="libwmf"/>
 		<dep package="webkitgtk"/>
 	</dependencies>
 </metamodule>

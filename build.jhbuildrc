@@ -87,9 +87,6 @@ use_lib64 = False
 import sys
 os.environ['PYTHON'] = os.environ.get("PYTHON", sys.executable)
 
-#Ensure that gimp doesn't get the host machine's freetype-config
-os.environ['FREETYPE_CONFIG'] = os.path.join(searchprefix, 'bin', 'freetype-config')
-
 #needed by win32/Makefile.gcc of zlib
 os.environ['INCLUDE_PATH'] = prefix+'/include'
 os.environ['LIBRARY_PATH'] = prefix+'/lib'
@@ -157,6 +154,10 @@ module_autogenargs['librsvg']    = autogenargs + """ --enable-introspection=no""
 
 module_autogenargs['libsoup']    = autogenargs + """ --without-apache-httpd"""
 
+module_autogenargs['libwmf']     = autogenargs + """ --disable-gd \
+                                                     --without-x \
+                                                     --with-freetype=""" + prefix
+
 module_autogenargs['webkitgtk']  = autogenargs + """ --with-gtk=2.0 \
                                                      --with-target=win32 \
                                                      --disable-webkit2 \
@@ -180,12 +181,10 @@ module_autogenargs['gegl']       = autogenargs + """ --enable-introspection=no \
                                                      --with-sdl=no"""
 
 module_autogenargs['gimp-stable']= autogenargs + """ --disable-python \
-                                                     --disable-gtk-doc \
-                                                     --without-wmf """
+                                                     --disable-gtk-doc """
 
 module_autogenargs['gimp-dev']   = autogenargs + """ --disable-python \
-                                                     --disable-gtk-doc \
-                                                     --without-wmf """
+                                                     --disable-gtk-doc """
 
 module_makeargs['pthreads-win32']= " CROSS=" + mingw_tool_prefix
 module_makeargs['libmng'] = " CC=" + mingw_tool_prefix + "gcc"
@@ -196,4 +195,10 @@ module_extra_env.update (
 	{'CXXFLAGS': os.environ['CXXFLAGS'] + ' -I' + checkoutroot + 'pthreads-w32-2-9-1-release -w'},
  'libmng': 
 	{'PREFIX': prefix, 'CFLAGS': os.environ['CFLAGS'] + os.environ['LDFLAGS']},
+
+# Ensure that gimp doesn't get the host machine's freetype-config
+  'gimp-dev':
+    {'FREETYPE_CONFIG': os.path.join(searchprefix, 'bin', 'freetype-config')},
+  'gimp-common':
+    {'FREETYPE_CONFIG': os.path.join(searchprefix, 'bin', 'freetype-config')},
 })
