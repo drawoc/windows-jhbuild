@@ -199,6 +199,6 @@ module_extra_env.update (
 # Ensure that gimp doesn't get the host machine's freetype-config
   'gimp-dev':
     {'FREETYPE_CONFIG': os.path.join(searchprefix, 'bin', 'freetype-config')},
-  'gimp-common':
+  'gimp-stable':
     {'FREETYPE_CONFIG': os.path.join(searchprefix, 'bin', 'freetype-config')},
 })
