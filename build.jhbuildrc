@@ -158,6 +158,13 @@ module_autogenargs['libwmf']     = autogenargs + """ --disable-gd \
                                                      --without-x \
                                                      --with-freetype=""" + prefix
 
+
+module_autogenargs['ghostscript']= autogenargs + """ --without-jasper \
+                                                     --with-system-libtiff \
+                                                     --without-x \
+                                                     --disable-cups \
+                                                     --disable-contrib """
+
 module_autogenargs['webkitgtk']  = autogenargs + """ --with-gtk=2.0 \
                                                      --with-target=win32 \
                                                      --disable-webkit2 \
@@ -195,6 +202,8 @@ module_extra_env.update (
 	{'CXXFLAGS': os.environ['CXXFLAGS'] + ' -I' + checkoutroot + 'pthreads-w32-2-9-1-release -w'},
  'libmng': 
 	{'PREFIX': prefix, 'CFLAGS': os.environ['CFLAGS'] + os.environ['LDFLAGS']},
+ 'ghostscript':
+	{'PREFIX': prefix, 'CFLAGS': os.environ['CFLAGS'].replace ("-march=i686", "")},
 
 # Ensure that gimp doesn't get the host machine's freetype-config
   'gimp-dev':

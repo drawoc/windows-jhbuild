@@ -30,7 +30,8 @@
 		<dep package="libmng"/>
 		<dep package="iso-codes"/>
 		<dep package="libwmf"/>
-		<dep package="webkitgtk"/>
+		<dep package="ghostscript"/>
+		<!--<dep package="webkitgtk"/>-->
 	</dependencies>
 </metamodule>
 

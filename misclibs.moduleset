@@ -88,4 +88,18 @@
 	</dependencies>
 </autotools>
 
+<autotools id="ghostscript" makeargs="so" makeinstallargs="soinstall">
+	<branch version="8.71" repo="sf.net"
+			module="ghostscript/GPL%20Ghostscript/8.71/ghostscript-8.71.tar.xz"
+			hash="sha1:aa2df7ba23abdfe95d36acec7333eac51768c47d">
+		<!-- From OBS -->
+		<patch file="ghostscript-8.71-windows.patch" strip="1"/>
+		<!-- Local patch: -->
+		<patch file="ghostscript-change-install-paths.patch" strip="1"/>
+	</branch>
+	<dependencies>
+		<dep package="tiff"/>
+	</dependencies>
+</autotools>
+
 </moduleset>
