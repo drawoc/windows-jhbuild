@@ -31,7 +31,7 @@
 		<dep package="iso-codes"/>
 		<dep package="libwmf"/>
 		<dep package="ghostscript"/>
-		<!--<dep package="webkitgtk"/>-->
+		<dep package="webkitgtk"/>
 	</dependencies>
 </metamodule>
 
