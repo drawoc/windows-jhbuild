@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <moduleset>
 	<repository type="tarball" name="bzip.org" href="http://www.bzip.org/" />
+	<repository type="tarball" name="tukaani.org"
+		href="http://tukaani.org/" />
 
 <autotools id="bzip2">
 	<branch version="1.0.6" repo="bzip.org"
@@ -10,6 +12,13 @@
 		<patch file="bzip2-1.0.6-autoconfiscated.patch" strip="1" />
 		<!-- From openSUSE buildservice -->
 		<patch file="bzip2-1.0.5-slash.patch" strip="1" />
+	</branch>
+</autotools>
+
+<autotools id="liblzma" autogen-sh="configure">
+	<branch version="5.0.4" repo="tukaani.org"
+			module="xz/xz-5.0.4.tar.xz"
+			hash="sha256:b7fd25be1ebead021447960804f91006e3fc2f151d7a19948c6a27b4db09b5e9">
 	</branch>
 </autotools>
 
