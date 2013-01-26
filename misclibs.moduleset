@@ -6,6 +6,8 @@
 		href="http://downloads.sourceforge.net/project/" />
 	<repository type="tarball" name="pkg-isocodes"
 		href="http://pkg-isocodes.alioth.debian.org/downloads/" />
+	<repository type="tarball" name="poppler"
+		href="http://poppler.freedesktop.org/" />
 
 	<include href="gtk+.moduleset"/>
 
@@ -99,6 +101,18 @@
 	</branch>
 	<dependencies>
 		<dep package="tiff"/>
+	</dependencies>
+</autotools>
+
+<autotools id="poppler" autogen-sh="configure">
+	<branch version="0.22.0" repo="poppler"
+			module="poppler-0.22.0.tar.gz"
+			hash="sha1:d9cfc390a5aa2aaf976318d9bf3642336f625981">
+	</branch>
+	<dependencies>
+		<dep package="freetype"/>
+		<dep package="imglibs"/>
+		<dep package="cairo"/>
 	</dependencies>
 </autotools>
 
