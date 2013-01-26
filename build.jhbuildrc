@@ -207,7 +207,7 @@ module_extra_env.update (
 
 # Ensure that gimp doesn't get the host machine's freetype-config
   'gimp-dev':
-    {'FREETYPE_CONFIG': os.path.join(searchprefix, 'bin', 'freetype-config')},
+    {'FREETYPE_CONFIG': os.path.join(searchprefix, 'bin', 'freetype-config'), 'ac_cv_lib_bz2_BZ2_bzCompress': 'yes'},
   'gimp-stable':
-    {'FREETYPE_CONFIG': os.path.join(searchprefix, 'bin', 'freetype-config')},
+    {'FREETYPE_CONFIG': os.path.join(searchprefix, 'bin', 'freetype-config'), 'ac_cv_lib_bz2_BZ2_bzCompress': 'yes'},
 })
