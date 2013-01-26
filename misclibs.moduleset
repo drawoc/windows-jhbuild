@@ -63,7 +63,7 @@
 	</branch>
 </autotools>
 
-<autotools id="libwmf" autogen-sh="configure">
+<autotools id="libwmf" autogen-sh=" || (make clean || true); ./configure">
 	<branch version="0.2.8.4" repo="sf.net"
 			module="wvware/libwmf/0.2.8.4/libwmf-0.2.8.4.tar.gz"
 			hash="sha1:822ab3bd0f5e8f39ad732f2774a8e9f18fc91e89">
