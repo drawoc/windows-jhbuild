@@ -203,7 +203,7 @@ module_extra_env.update (
  'libmng': 
 	{'PREFIX': prefix, 'CFLAGS': os.environ['CFLAGS'] + os.environ['LDFLAGS']},
  'ghostscript':
-	{'PREFIX': prefix, 'CFLAGS': os.environ['CFLAGS'].replace ("-march=i686", "")},
+	{'CFLAGS': os.environ['CFLAGS'].replace ("-march=i686", ""), 'ac_cv_lib_pthread_pthread_create': 'no'},
 
 # Ensure that gimp doesn't get the host machine's freetype-config
   'gimp-dev':
