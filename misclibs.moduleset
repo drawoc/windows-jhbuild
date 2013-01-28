@@ -108,6 +108,8 @@
 	<branch version="0.22.0" repo="poppler"
 			module="poppler-0.22.0.tar.gz"
 			hash="sha1:d9cfc390a5aa2aaf976318d9bf3642336f625981">
+		<!-- Local patch: -->
+		<patch file="poppler-0.22.0-strcpy_s.patch" strip="1"/>
 	</branch>
 	<dependencies>
 		<dep package="freetype"/>
