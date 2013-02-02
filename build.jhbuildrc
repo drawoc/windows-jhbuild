@@ -24,7 +24,7 @@ if flavour == 'rls':
 else:
         flavour_ext = '-dbg'
         flavour_opt = "--enable-debug=yes"
-        flavour_cflags = " -g -O0"
+        flavour_cflags = " -g -O0 "
 
 
 # checkoutroot: path to download packages elsewhere
