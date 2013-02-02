@@ -25,6 +25,7 @@ else:
         flavour_ext = '-dbg'
         flavour_opt = "--enable-debug=yes"
         flavour_cflags = " -g -O0 "
+        modules.append ("gdb")
 
 
 # checkoutroot: path to download packages elsewhere
