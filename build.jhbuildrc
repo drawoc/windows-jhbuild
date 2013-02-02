@@ -193,6 +193,8 @@ module_autogenargs['gimp-stable']= autogenargs + """ --disable-python \
 module_autogenargs['gimp-dev']   = autogenargs + """ --disable-python \
                                                      --disable-gtk-doc """
 
+module_autogenargs['gdb']        = autogenargs.replace ("--disable-static", "")
+
 module_makeargs['pthreads-win32']= " CROSS=" + mingw_tool_prefix
 module_makeargs['libmng'] = " CC=" + mingw_tool_prefix + "gcc"
 module_extra_env.update (

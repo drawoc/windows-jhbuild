@@ -6,6 +6,7 @@
 	<include href="gtk+.moduleset"/>
 	<include href="webkitgtk.moduleset"/>
 	<include href="misclibs.moduleset"/>
+	<include href="gdb.moduleset"/>
 
 <autotools id="babl">
 	<branch/>
