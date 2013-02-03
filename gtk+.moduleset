@@ -16,9 +16,9 @@
 		href="ftp://xmlsoft.org/" />
 
 <autotools id="cairo" autogen-sh="configure">
-	<branch version="1.12.8" repo="cairographics.org"
-			module="cairo-1.12.8.tar.xz"
-			hash="sha1:56a10bf3b804367c97734d655c23a9f652d5c297">
+	<branch version="1.12.12" repo="cairographics.org"
+			module="cairo-1.12.12.tar.xz"
+			hash="sha1:8e597874da5b861287893d87dd4ab32471e99c82">
 	</branch>
 	<dependencies>
 		<dep package="zlib"/>
