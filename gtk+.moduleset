@@ -14,12 +14,12 @@
 		href="http://download.savannah.gnu.org/releases/" />
 	<repository type="tarball" name="xmlsoft.org"
 		href="ftp://xmlsoft.org/" />
+	<repository type="git" name="anongit.freedesktop.org"
+		href="git://anongit.freedesktop.org/"/>
 
-<autotools id="cairo" autogen-sh="configure">
-	<branch version="1.12.12" repo="cairographics.org"
-			module="cairo-1.12.12.tar.xz"
-			hash="sha1:8e597874da5b861287893d87dd4ab32471e99c82">
-	</branch>
+<autotools id="cairo">
+	<branch module="cairo" repo="anongit.freedesktop.org"
+		revision="d4651676e1496f0354acb0ef045e8b65601edf6d"/>
 	<dependencies>
 		<dep package="zlib"/>
 		<dep package="png"/>
