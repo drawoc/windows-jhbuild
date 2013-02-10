@@ -19,7 +19,7 @@
 
 <autotools id="cairo">
 	<branch module="cairo" repo="anongit.freedesktop.org"
-		revision="d4651676e1496f0354acb0ef045e8b65601edf6d"/>
+		revision="1.12.14"/>
 	<dependencies>
 		<dep package="zlib"/>
 		<dep package="png"/>
