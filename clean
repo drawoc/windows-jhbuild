@@ -4,4 +4,7 @@ pushd checkout
 rm -rf *-*/
 popd
 
-rm -rf targets/*
+if [[ "$1" != "--skip-targets" ]]; then
+	echo "Cleaning targets"
+	rm -rf targets/*
+fi
