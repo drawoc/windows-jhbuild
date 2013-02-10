@@ -20,11 +20,11 @@ chmod a-w win32.cache
 export MODULE=gimp-common
 jhbuild --file=build.jhbuildrc $*
 
-./targetisunchanged gimp-common$EXT gimp-stable || init_target gimp-stable
+./targetisunchanged gimp-common$EXT gimp-stable$EXT || init_target gimp-stable$EXT
 export MODULE=gimp-stable
 jhbuild --file=build.jhbuildrc $* build --start-at=gimp-common
 
-./targetisunchanged gimp-common$EXT gimp-dev || init_target gimp-dev
+./targetisunchanged gimp-common$EXT gimp-dev$EXT || init_target gimp-dev$EXT
 export MODULE=gimp-dev
 jhbuild --file=build.jhbuildrc $* build --start-at=gimp-common
 
