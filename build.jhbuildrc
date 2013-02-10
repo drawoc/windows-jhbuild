@@ -66,6 +66,12 @@ for tool in mingw_tools.keys():
 	fullpath_tool = mingw_tool_prefix + mingw_tools[tool]
 	os.environ[tool] = fullpath_tool
 
+# Allow enabling ccache
+if os.environ['MINGW_USE_CCACHE'] == 'yes':
+    os.environ['CC']  = 'ccache ' + os.environ['CC']
+    os.environ['CPP'] = 'ccache ' + os.environ['CPP']
+    os.environ['CXX'] = 'ccache ' + os.environ['CXX']
+
 #Added another common env var name for windres
 os.environ['RC'] = os.environ['WINDRES']
 
