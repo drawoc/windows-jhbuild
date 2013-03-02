@@ -1,6 +1,10 @@
 Doing a Simple Build
 ====================
-To begin with, you need to install jhbuild and mingw-w64.
+To begin with, you need to install jhbuild, mingw-w64, and a few other build-related dependencies.
+
+If you're using debian, install these packages:
+
+	sudo apt-get install build-essential mingw-w64 git jhbuild automake autoconf libtool libgtk2.0-dev ragel
 
 From there, in theory, you can simply clone this repo, cd into it, and run:
 
