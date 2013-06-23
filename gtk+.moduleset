@@ -16,8 +16,6 @@
 		href="ftp://xmlsoft.org/" />
 	<repository type="git" name="anongit.freedesktop.org"
 		href="git://anongit.freedesktop.org/"/>
-	<repository type="git" name="git.gnome.org"
-		href="git://git.gnome.org/"/>
 
 <autotools id="cairo">
 	<branch module="cairo" repo="anongit.freedesktop.org"
@@ -117,8 +115,12 @@
 	</dependencies>
 </autotools>
 
-<autotools id="gtk+" makeinstallargs="install -j1">
-	<branch module="gtk+" revision="gtk-2-24" repo="git.gnome.org"/>
+<autotools id="gtk+" autogen-sh="configure" makeinstallargs="install -j1">
+	<branch version="2.24.13" repo="gnome.org"
+			module="gtk+/2.24/gtk+-2.24.13.tar.xz"
+			hash="sha256:35e1a01e46b02970b02ee9f299390d0aa57c1215ad2667bcd584b72f4ea6513d">
+		<patch file="gtk-2.24.11-link-to-gmodule.patch" strip="0"/>
+	</branch>
 	<dependencies>
 		<dep package="glib"/>
 		<dep package="gdk-pixbuf"/>
