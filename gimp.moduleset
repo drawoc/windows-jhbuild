@@ -15,6 +15,13 @@
 	</dependencies>
 </autotools>
 
+<autotools id="gegl-0.2">
+	<branch module="gegl" revision="gegl-0-2"/>
+	<dependencies>
+		<dep package="babl"/>
+	</dependencies>
+</autotools>
+
 <autotools id="gegl">
 	<branch/>
 	<dependencies>
@@ -25,7 +32,7 @@
 <metamodule id="gimp-common">
 	<dependencies>
 		<dep package="gtk+"/>
-		<dep package="gegl"/>
+		<dep package="liblzma"/>
 		<dep package="librsvg"/>
 		<dep package="libexif"/>
 		<dep package="libmng"/>
@@ -33,7 +40,6 @@
 		<dep package="libwmf"/>
 		<dep package="ghostscript"/>
 		<dep package="poppler"/>
-		<dep package="liblzma"/>
 		<dep package="webkitgtk"/>
 	</dependencies>
 </metamodule>
@@ -43,6 +49,7 @@
 	<dependencies>
 		<dep package="gimp-common"/>
 		<dep package="lcms"/>
+		<dep package="gegl-0.2"/>
 	</dependencies>
 </autotools>
 
@@ -51,6 +58,7 @@
 	<dependencies>
 		<dep package="gimp-common"/>
 		<dep package="lcms2"/>
+		<dep package="gegl"/>
 	</dependencies>
 </autotools>
 
