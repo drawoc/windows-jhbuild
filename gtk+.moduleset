@@ -116,10 +116,10 @@
 </autotools>
 
 <autotools id="gtk+" autogen-sh="configure" makeinstallargs="install -j1">
-	<branch version="2.24.13" repo="gnome.org"
-			module="gtk+/2.24/gtk+-2.24.13.tar.xz"
-			hash="sha256:35e1a01e46b02970b02ee9f299390d0aa57c1215ad2667bcd584b72f4ea6513d">
-		<patch file="gtk-2.24.11-link-to-gmodule.patch" strip="0"/>
+	<branch version="2.24.19" repo="gnome.org"
+			module="gtk+/2.24/gtk+-2.24.19.tar.xz"
+			hash="sha256:15b8bf463eba99abfa58270662914e8e9b83568ab4945b5f0ef1aa29e90becb8">
+		<!--<patch file="gtk-2.24.11-link-to-gmodule.patch" strip="0"/>-->
 	</branch>
 	<dependencies>
 		<dep package="glib"/>
