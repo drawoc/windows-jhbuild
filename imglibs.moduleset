@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <moduleset>
+	<repository type="tarball" name="ijg"
+		href="http://www.ijg.org/files/" />
 	<repository type="tarball" name="jasper" href="http://www.ece.uvic.ca/~frodo/jasper/software/" />
 	<repository type="tarball" name="osgeo.org"
 		href="http://download.osgeo.org/" />
@@ -29,10 +31,13 @@
 	</dependencies>
 </tarball>
 
-<tarball id="jpeg" version="8d" checkoutdir="jpeg-8d">
-	<source href="http://www.ijg.org/files/jpegsrc.v8d.tar.gz"
-		md5sum="52654eb3b2e60c35731ea8fc87f1bd29"/>
-</tarball>
+<autotools id="jpeg" autogen-sh="configure">
+	<branch version="9" repo="ijg"
+			module="jpegsrc.v9.tar.gz"
+			checkoutdir="jpeg-9"
+			hash="sha1:724987e7690ca3d74d6ab7c1f1b6854e88ca204b">
+	</branch>
+</autotools>
 
 <autotools id="jasper">
 	<branch version="1.900.1" repo="jasper"
