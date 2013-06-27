@@ -34,12 +34,14 @@
 </autotools>
 
 <autotools id="libsoup" autogen-sh="configure">
-	<branch version="2.40.2" repo="gnome.org"
-			module="libsoup/2.40/libsoup-2.40.2.tar.xz"
-			hash="sha256:32e81220f53abb1f5bbe7d8b0717119df70667fc48e2342d82209ed1593e71dc">
+	<branch version="2.42.2" repo="gnome.org"
+			module="libsoup/2.42/libsoup-2.42.2.tar.xz"
+			hash="sha256:1f4f9cc55ba483dc8defea0c3f97cc507dc48384c5529179e29c1e6d05630dbf">
+		<patch file="libsoup-request-file-string-h.patch" strip="1"/>
 	</branch>
 	<dependencies>
 		<dep package="gtk+"/>
+		<dep package="sqlite"/>
 	</dependencies>
 </autotools>
 
