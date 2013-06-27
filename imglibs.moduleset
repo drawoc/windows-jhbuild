@@ -7,6 +7,8 @@
 		href="http://download.osgeo.org/" />
 	<repository type="tarball" name="sf.net"
 		href="http://downloads.sourceforge.net/project/" />
+	<repository type="tarball" name="webp"
+		href="https://webp.googlecode.com/files/" />
 
 <tarball id="zlib" version="1.2.7" makeargs="-f win32/Makefile.gcc -e zlib1.dll SHARED_MODE=1" makeinstallargs="-f win32/Makefile.gcc -e install SHARED_MODE=1">
 	<source href="http://zlib.net/zlib-1.2.7.tar.gz"
@@ -73,6 +75,13 @@
 		<dep package="zlib"/>
 		<dep package="jpeg"/>
 	</dependencies>
+</autotools>
+
+<autotools id="libwebp" autogen-sh="configure">
+	<branch version="0.3.1" repo="webp"
+			module="libwebp-0.3.1.tar.gz"
+			hash="sha1:52e3d2b6c0b80319baa33b8ebed89618769d9dd8">
+	</branch>
 </autotools>
 
 </moduleset>
