@@ -157,6 +157,8 @@ module_autogenargs['fontconfig'] = autogenargs + """ --with-arch=i686 \
 
 module_autogenargs['harfbuzz']   = autogenargs + """ --without-icu"""
 
+module_autogenargs['icu']        = autogenargs + """ --with-cross-build=$(pwd)/../icu-native/ """
+
 module_autogenargs['libxml2']    = autogenargs + """ --with-python=no \
                                                      --with-iconv=yes"""
 
@@ -216,6 +218,7 @@ module_extra_env.update (
 	{'PREFIX': prefix, 'CFLAGS': os.environ['CFLAGS'] + os.environ['LDFLAGS']},
  'ghostscript':
 	{'CFLAGS': os.environ['CFLAGS'].replace ("-march=i686", "").replace ("-O0", "").replace ("-mms-bitfields", ""), 'ac_cv_lib_pthread_pthread_create': 'no', 'CC': os.environ['CC'] + " -mms-bitfields"},
+  'icu-native': {},
 
 # Ensure that gimp doesn't get the host machine's freetype-config
   'gimp-dev':

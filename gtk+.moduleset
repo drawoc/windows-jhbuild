@@ -16,6 +16,8 @@
 		href="ftp://xmlsoft.org/" />
 	<repository type="git" name="anongit.freedesktop.org"
 		href="git://anongit.freedesktop.org/"/>
+	<repository type="tarball" name="icu-project.org"
+		href="http://download.icu-project.org/files/" />
 
 <autotools id="cairo">
 	<branch module="cairo" repo="anongit.freedesktop.org"
@@ -80,6 +82,27 @@
 		<dep package="bzip2"/>
 		<dep package="libxml2"/>
 	</dependencies>
+</autotools>
+
+<autotools id="icu" autogen-sh="source/runConfigureICU MinGW ">
+	<branch version="51.2" repo="icu-project.org"
+			checkoutdir="icu-mingw"
+			module="icu4c/51.2/icu4c-51_2-src.tgz"
+			hash="md5:072e501b87065f3a0ca888f1b5165709">
+		<patch file="icu-unexport-target.patch" strip="1"/>
+	</branch>
+	<dependencies>
+		<dep package="icu-native"/>
+	</dependencies>
+</autotools>
+
+<autotools id="icu-native" autogen-sh=" || env -i source/runConfigureICU Linux ; true " makeinstallargs=" -f ../../fake.mk ">
+	<branch version="51.2" repo="icu-project.org"
+			checkoutdir="icu-native"
+			module="icu4c/51.2/icu4c-51_2-src.tgz"
+			hash="md5:072e501b87065f3a0ca888f1b5165709">
+		<patch file="icu-unexport-target.patch" strip="1"/>
+	</branch>
 </autotools>
 
 <autotools id="harfbuzz">
