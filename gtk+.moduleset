@@ -90,6 +90,7 @@
 			module="icu4c/51.2/icu4c-51_2-src.tgz"
 			hash="md5:072e501b87065f3a0ca888f1b5165709">
 		<patch file="icu-unexport-target.patch" strip="1"/>
+		<patch file="icu-fix-library-names.patch" strip="1"/>
 	</branch>
 	<dependencies>
 		<dep package="icu-native"/>
