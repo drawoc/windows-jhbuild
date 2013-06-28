@@ -128,6 +128,20 @@
 	</dependencies>
 </autotools>
 
+<autotools id="libxslt" autogen-sh="configure">
+	<branch version="1.1.28" repo="xmlsoft.org"
+			module="libxslt/libxslt-1.1.28.tar.gz"
+			hash="sha256:5fc7151a57b89c03d7b825df5a0fae0a8d5f05674c0e7cf2937ecec4d54a028c">
+		<!-- From: OBS -->
+		<patch file="libxslt-1.1.26-w64.patch" strip="1"/>
+	</branch>
+	<dependencies>
+		<dep package="iconv"/>
+		<dep package="libxml2"/>
+		<dep package="zlib"/>
+	</dependencies>
+</autotools>
+
 <autotools id="gdk-pixbuf" autogen-sh="configure">
 	<branch version="2.26.4" repo="gnome.org"
 			module="gdk-pixbuf/2.26/gdk-pixbuf-2.26.4.tar.xz"
