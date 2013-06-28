@@ -178,16 +178,14 @@ module_autogenargs['ghostscript']= autogenargs + """ --without-jasper \
 module_autogenargs['webkitgtk']  = autogenargs + """ --with-gtk=2.0 \
                                                      --with-target=win32 \
                                                      --disable-webkit2 \
-                                                     --disable-xslt \
                                                      --disable-geolocation \
                                                      --disable-video \
                                                      --disable-spellcheck \
+                                                     --disable-credential-storage \
                                                      --disable-fast-malloc \
-                                                     --disable-jit \
                                                      --disable-debug \
                                                      --disable-debug-symbols \
                                                      --disable-debug-features \
-                                                     --with-unicode-backend=glib \
 \
                                                      --disable-gamepad \
                                                      --with-acceleration_backend=none"""

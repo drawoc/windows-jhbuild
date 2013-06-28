@@ -2,14 +2,10 @@
 <moduleset>
 	<repository type="tarball" name="gnome.org"
 		href="http://ftp.gnome.org/pub/gnome/sources/" />
-	<repository type="tarball" name="sf.net"
-		href="http://downloads.sourceforge.net/project/" />
 	<repository type="tarball" name="webkitgtk.org"
 		href="http://webkitgtk.org/releases/" />
 	<repository type="tarball" name="sqlite.org"
 		href="http://www.sqlite.org/" />
-	<repository type="tarball" name="icu-project.org"
-		href="http://download.icu-project.org/files/" />
 	<repository type="tarball" name="sourceware.org"
 		href="ftp://sourceware.org/pub/" />
 
@@ -21,16 +17,6 @@
 			hash="md5:36ba827d6aa0fa9f9ae740a35626e2e3">
 		<patch file="pthreads-add-install-mk.patch" strip="1"/>
 	</branch>
-</autotools>
-
-<autotools id="gail" autogen-sh="configure" makeinstallargs="install -j1">
-	<branch version="1.10.2" repo="gnome.org"
-			module="gail/1.22/gail-1.22.3.tar.bz2"
-			hash="sha256:03f03029277eb4f0e2c15a825fe716245d8647ede0435645475110289b059ae8">
-	</branch>
-	<dependencies>
-		<dep package="gtk+"/>
-	</dependencies>
 </autotools>
 
 <autotools id="libsoup" autogen-sh="configure">
@@ -53,20 +39,19 @@
 </autotools>
 
 <autotools id="webkitgtk">
-	<branch version="1.8.3" repo="webkitgtk.org"
-			module="webkit-1.8.3.tar.xz"
-			hash="sha256:ada02d636af61aed38f142d3cded662d141ce71264f624c4eb873621a74cc9e7">
+	<branch version="2.0.3" repo="webkitgtk.org"
+			module="webkitgtk-2.0.3.tar.xz"
+			hash="sha1:136c649c34956cadfaac9b13bbad368b70d38820">
 		<patch file="webkit-add-autogen.patch" strip="1"/>
-		<patch file="webkit-bug-92264.patch" strip="1"/>
-		<patch file="webkit-1.8-uchar.patch" strip="0"/>
-		<patch file="webkit-disable-tools.patch" strip="1"/>
+		<patch file="webkit-2.0-disable-tests.patch" strip="1"/>
 	</branch>
 	<dependencies>
 		<dep package="pthreads-win32"/>
 		<dep package="libsoup"/>
-		<dep package="gail"/>
 		<dep package="sqlite"/>
 		<dep package="gtk+"/>
+		<dep package="libwebp"/>
+		<dep package="libxslt"/>
 	</dependencies>
 </autotools>
 
