@@ -16,6 +16,8 @@ dostuff (){
 	pushd combined
 	pushd $f
 
+	mv lib/libicu*.dll bin/
+
 	rm -rf _jhbuild
 	rm -rf man
 	rm -rf share/doc
