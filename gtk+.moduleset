@@ -115,6 +115,7 @@
 	</branch>
 	<suggests>
 		<dep package="cairo"/>
+		<dep package="icu"/>
 		<dep package="freetype"/>
 	</suggests>
 </autotools>
