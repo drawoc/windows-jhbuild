@@ -3,6 +3,8 @@
 	<repository type="tarball" name="bzip.org" href="http://www.bzip.org/" />
 	<repository type="tarball" name="tukaani.org"
 		href="http://tukaani.org/" />
+	<repository type="tarball" name="zlib.net"
+		href="http://zlib.net/" />
 
 <autotools id="bzip2">
 	<branch version="1.0.6" repo="bzip.org"
@@ -19,6 +21,13 @@
 	<branch version="5.0.4" repo="tukaani.org"
 			module="xz/xz-5.0.4.tar.xz"
 			hash="sha256:b7fd25be1ebead021447960804f91006e3fc2f151d7a19948c6a27b4db09b5e9">
+	</branch>
+</autotools>
+
+<autotools id="zlib" autogen-sh="configure" makeargs="-f win32/Makefile.gcc -e zlib1.dll SHARED_MODE=1" makeinstallargs="-f win32/Makefile.gcc -e install SHARED_MODE=1">
+	<branch version="1.2.8" repo="zlib.net"
+			module="zlib-1.2.8.tar.xz"
+			hash="md5:28f1205d8dd2001f26fec1e8c2cebe37">
 	</branch>
 </autotools>
 
