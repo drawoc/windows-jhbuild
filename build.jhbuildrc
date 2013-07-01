@@ -155,6 +155,8 @@ module_autogenargs['gtk+']       = autogenargs + """ --disable-glibtest \
 module_autogenargs['fontconfig'] = autogenargs + """ --with-arch=i686 \
                                                      --enable-libxml2"""
 
+module_autogenargs['harfbuzz']   = autogenargs + """ --without-icu"""
+
 module_autogenargs['icu']        = autogenargs + """ --with-cross-build=$(pwd)/../icu-native/ """
 
 module_autogenargs['libxml2']    = autogenargs + """ --with-python=no \
