@@ -22,10 +22,10 @@ jhbuild --file=build.jhbuildrc $*
 
 ./targetisunchanged gimp-common$EXT gimp-stable$EXT || init_target gimp-stable$EXT
 export MODULE=gimp-stable
-jhbuild --file=build.jhbuildrc $* build --start-at=gimp-common
+jhbuild --file=build.jhbuildrc $* build --start-at=gimp-common || true
 
 ./targetisunchanged gimp-common$EXT gimp-dev$EXT || init_target gimp-dev$EXT
 export MODULE=gimp-dev
-jhbuild --file=build.jhbuildrc $* build --start-at=gimp-common
+jhbuild --file=build.jhbuildrc $* build --start-at=gimp-common || true
 
 chmod u+w win32.cache
