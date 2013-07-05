@@ -27,6 +27,7 @@
 		<dep package="png"/>
 		<dep package="pixman"/>
 		<dep package="fontconfig"/>
+		<dep package="glib"/>
 	</dependencies>
 </autotools>
 
