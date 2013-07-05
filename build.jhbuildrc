@@ -44,8 +44,10 @@ searchprefix = os.environ['PWD']+'/targets/gimp-common' + flavour_ext + '/'
 os.environ['HOST'] = 'x86_64-unknown-linux-gnu'
 os.environ['TARGET'] = os.environ.get('MINGW_TARGET', 'i686-w64-mingw32')
 
+os.environ['PKG_CONFIG_LIBDIR'] = ""
 addpath('PKG_CONFIG_LIBDIR', os.path.join(searchprefix, 'lib', 'pkgconfig'))
 addpath('PKG_CONFIG_LIBDIR', os.path.join(searchprefix, 'share', 'pkgconfig'))
+os.environ['PKG_CONFIG_PATH'] = os.environ['PKG_CONFIG_LIBDIR']
 
 #Prefix for all the tools
 mingw_tool_prefix = os.environ.get('MINGW_TOOLPREFIX', os.environ.get('MINGW_LOCATION', '/usr') + '/bin/' + os.environ['TARGET'] + '-')
