@@ -24,10 +24,10 @@
 		revision="1.12.14"/>
 	<dependencies>
 		<dep package="zlib"/>
-		<dep package="png"/>
+		<dep package="libpng"/>
 		<dep package="pixman"/>
 		<dep package="fontconfig"/>
-		<dep package="glib"/>
+		<dep package="glib2"/>
 	</dependencies>
 </autotools>
 
@@ -46,7 +46,7 @@
 	<dependencies>
 		<dep package="cairo"/>
 		<dep package="pixman"/>
-		<dep package="glib"/>
+		<dep package="glib2"/>
 		<dep package="fontconfig"/>
 		<dep package="harfbuzz"/>
 	</dependencies>
@@ -58,7 +58,7 @@
 			hash="sha256:eff663f90847620bb68c9c2cbaaf7f45e2ff44163b9ab3f10d15be763680491f">
 	</branch>
 	<dependencies>
-		<dep package="glib"/>
+		<dep package="glib2"/>
 	</dependencies>
 </autotools>
 
@@ -70,11 +70,11 @@
 		<patch file="fontconfig-fix-config-dir.patch" strip="0"/>
 	</branch>
 	<dependencies>
-		<dep package="freetype"/>
+		<dep package="freetype2"/>
 	</dependencies>
 </autotools>
 
-<autotools id="freetype" autogen-sh="configure">
+<autotools id="freetype2" autogen-sh="configure">
 	<branch version="2.4.10" repo="savannah.gnu.org"
 			module="freetype/freetype-2.4.10.tar.bz2"
 			hash="sha256:0c8e242c33c45928de560d7d595db06feb41d1b22167e37260ceabe72f9e992f">
@@ -116,7 +116,7 @@
 	</branch>
 	<suggests>
 		<dep package="cairo"/>
-		<dep package="freetype"/>
+		<dep package="freetype2"/>
 	</suggests>
 </autotools>
 
@@ -144,25 +144,25 @@
 	</dependencies>
 </autotools>
 
-<autotools id="gdk-pixbuf" autogen-sh="configure">
+<autotools id="gdk-pixbuf2" autogen-sh="configure">
 	<branch version="2.26.4" repo="gnome.org"
 			module="gdk-pixbuf/2.26/gdk-pixbuf-2.26.4.tar.xz"
 			hash="sha256:a91458645f078debf204fef8bb06b30f356fcb5d48f65395132a5dba2b3510be">
 	</branch>
 	<dependencies>
-		<dep package="glib"/>
+		<dep package="glib2"/>
 		<dep package="imglibs"/>
 	</dependencies>
 </autotools>
 
-<autotools id="gtk+" autogen-sh="configure" makeinstallargs="install -j1">
+<autotools id="gtk2" autogen-sh="configure" makeinstallargs="install -j1">
 	<branch version="2.24.19" repo="gnome.org"
 			module="gtk+/2.24/gtk+-2.24.19.tar.xz"
 			hash="sha256:15b8bf463eba99abfa58270662914e8e9b83568ab4945b5f0ef1aa29e90becb8">
 	</branch>
 	<dependencies>
-		<dep package="glib"/>
-		<dep package="gdk-pixbuf"/>
+		<dep package="glib2"/>
+		<dep package="gdk-pixbuf2"/>
 		<dep package="cairo"/>
 		<dep package="atk"/>
 		<dep package="pango"/>

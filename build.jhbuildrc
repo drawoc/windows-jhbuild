@@ -127,7 +127,7 @@ module_autogenargs['gettext']    = autogenargs + """ --without-emacs \
                                                      --enable-relocatable \
                                                      --enable-threads=win32"""
 
-module_autogenargs['glib']       = autogenargs + """ --disable-gtk-doc \
+module_autogenargs['glib2']      = autogenargs + """ --disable-gtk-doc \
                                                      --disable-modular-tests \
                                                      --cache-file=""" + os.environ['PWD'] + "/win32.cache"
 
@@ -148,9 +148,9 @@ module_autogenargs['atk']        = autogenargs + """ --disable-glibtest \
                                                      --disable-gtk-doc \
                                                      --enable-introspection=no"""
 
-module_autogenargs['gdk-pixbuf'] = autogenargs + """ --with-included-loaders"""
+module_autogenargs['gdk-pixbuf2']= autogenargs + """ --with-included-loaders"""
 
-module_autogenargs['gtk+']       = autogenargs + """ --disable-glibtest \
+module_autogenargs['gtk2']       = autogenargs + """ --disable-glibtest \
                                                      --disable-gtk-doc \
                                                      --disable-cups"""
 
@@ -207,10 +207,10 @@ module_autogenargs['gimp-dev']   = autogenargs + """ --disable-python \
 
 module_autogenargs['gdb']        = autogenargs.replace ("--disable-static", "")
 
-module_makeargs['pthreads-win32']= " CROSS=" + mingw_tool_prefix
+module_makeargs['mingw32-pthreads']= " CROSS=" + mingw_tool_prefix
 module_makeargs['libmng'] = " CC=" + mingw_tool_prefix + "gcc"
 module_extra_env.update (
-{'pthreads-win32': 
+{'mingw32-pthreads': 
 	{'PREFIX': prefix},
  'webkitgtk':
 	{'CXXFLAGS': os.environ['CXXFLAGS'] + ' -I' + checkoutroot + 'pthreads-w32-2-9-1-release -w'},

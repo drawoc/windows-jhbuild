@@ -11,7 +11,7 @@
 <autotools id="babl">
 	<branch/>
 	<dependencies>
-		<dep package="glib"/>
+		<dep package="glib2"/>
 	</dependencies>
 </autotools>
 
@@ -31,8 +31,8 @@
 
 <metamodule id="gimp-common">
 	<dependencies>
-		<dep package="gtk+"/>
-		<dep package="liblzma"/>
+		<dep package="gtk2"/>
+		<dep package="xz"/>
 		<dep package="librsvg"/>
 		<dep package="libexif"/>
 		<dep package="libmng"/>

@@ -12,7 +12,7 @@
 
 	<include href="compresslibs.moduleset"/>
 
-<autotools id="tiff" autogen-sh="configure">
+<autotools id="libtiff" autogen-sh="configure">
 	<branch version="4.0.3" repo="osgeo.org"
 			module="libtiff/tiff-4.0.3.zip"
 			hash="sha1:851126a9876e261bee808f347711be74e3566ed6">
@@ -22,7 +22,7 @@
 	</dependencies>
 </autotools>
 
-<tarball id="png" version="1.5.12">
+<tarball id="libpng" version="1.5.12">
 	<source href="http://downloads.sourceforge.net/libpng/libpng-1.5.12.tar.xz"
 		md5sum="0fd51add1da6a0e470e0c726c59171b9"/>
 	<dependencies>
@@ -53,8 +53,8 @@
 
 <metamodule id="imglibs">
 	<dependencies>
-		<dep package="png"/>
-		<dep package="tiff"/>
+		<dep package="libpng"/>
+		<dep package="libtiff"/>
 		<dep package="jpeg"/>
 		<dep package="jasper"/>
 	</dependencies>

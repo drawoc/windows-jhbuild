@@ -11,7 +11,7 @@
 
 	<include href="gtk+.moduleset"/>
 
-<autotools id="pthreads-win32" autogen-sh=" || true" makeargs="clean GC -j1" makeinstallargs=" -f install.mk">
+<autotools id="mingw32-pthreads" autogen-sh=" || true" makeargs="clean GC -j1" makeinstallargs=" -f install.mk">
 	<branch version="2.9.1" repo="sourceware.org"
 			module="pthreads-win32/pthreads-w32-2-9-1-release.tar.gz"
 			hash="md5:36ba827d6aa0fa9f9ae740a35626e2e3">
@@ -26,7 +26,7 @@
 		<patch file="libsoup-request-file-string-h.patch" strip="1"/>
 	</branch>
 	<dependencies>
-		<dep package="gtk+"/>
+		<dep package="gtk2"/>
 		<dep package="sqlite"/>
 	</dependencies>
 </autotools>
@@ -46,10 +46,10 @@
 		<patch file="webkit-2.0-disable-tests.patch" strip="1"/>
 	</branch>
 	<dependencies>
-		<dep package="pthreads-win32"/>
+		<dep package="mingw32-pthreads"/>
 		<dep package="libsoup"/>
 		<dep package="sqlite"/>
-		<dep package="gtk+"/>
+		<dep package="gtk2"/>
 		<dep package="libwebp"/>
 		<dep package="libxslt"/>
 	</dependencies>

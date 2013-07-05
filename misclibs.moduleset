@@ -17,7 +17,7 @@
 			hash="sha256:ea6e1b858c55219cefd7109756bff5bc1a774ba7a55f7d3ccd734d6b871b8570">
 	</branch>
 	<dependencies>
-		<dep package="glib"/>
+		<dep package="glib2"/>
 		<dep package="libxml2"/>
 	</dependencies>
 </autotools>
@@ -28,8 +28,8 @@
 			hash="sha256:1021935204798f4f0ad3004a09b583668ea94a48593461b147fdcff68a18e6c2">
 	</branch>
 	<dependencies>
-		<dep package="glib"/>
-		<dep package="gdk-pixbuf"/>
+		<dep package="glib2"/>
+		<dep package="gdk-pixbuf2"/>
 		<dep package="libxml2"/>
 		<dep package="cairo"/>
 		<dep package="pango"/>
@@ -83,9 +83,9 @@
 		<patch file="libwmf/libwmf-0.2.8.4-libpng-1.5.patch" strip="1"/>
 	</branch>
 	<dependencies>
-		<dep package="freetype"/>
+		<dep package="freetype2"/>
 		<dep package="zlib"/>
-		<dep package="png"/>
+		<dep package="libpng"/>
 		<dep package="jpeg"/>
 	</dependencies>
 </autotools>
@@ -100,7 +100,7 @@
 		<patch file="ghostscript-change-install-paths.patch" strip="1"/>
 	</branch>
 	<dependencies>
-		<dep package="tiff"/>
+		<dep package="libtiff"/>
 	</dependencies>
 </autotools>
 
@@ -112,7 +112,7 @@
 		<patch file="poppler-0.22.0-strcpy_s.patch" strip="1"/>
 	</branch>
 	<dependencies>
-		<dep package="freetype"/>
+		<dep package="freetype2"/>
 		<dep package="imglibs"/>
 		<dep package="cairo"/>
 	</dependencies>
