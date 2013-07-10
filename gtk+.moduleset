@@ -157,8 +157,10 @@
 
 <autotools id="gtk2" autogen-sh="configure" makeinstallargs="install -j1">
 	<branch version="2.24.19" repo="gnome.org"
-			module="gtk+/2.24/gtk+-2.24.19.tar.xz"
-			hash="sha256:15b8bf463eba99abfa58270662914e8e9b83568ab4945b5f0ef1aa29e90becb8">
+			module="gtk+/2.24/gtk+-2.24.20.tar.xz"
+			hash="sha256:cc66bcbf9239a7d9861175c681ba95894b55c70dc0b37aad8345c46ecfda0da3">
+		<!-- https://bug699673.bugzilla-attachments.gnome.org/attachment.cgi?id=244107 -->
+		<patch file="gtk2-uuid.patch" strip="1"/>
 	</branch>
 	<dependencies>
 		<dep package="glib2"/>
