@@ -22,13 +22,15 @@
 	</dependencies>
 </autotools>
 
-<tarball id="libpng" version="1.5.12">
-	<source href="http://downloads.sourceforge.net/libpng/libpng-1.5.12.tar.xz"
-		md5sum="0fd51add1da6a0e470e0c726c59171b9"/>
+<autotools id="libpng" autogen-sh="configure">
+	<branch version="1.6.3" repo="sf.net"
+			module="libpng/libpng16/1.6.3/libpng-1.6.3.tar.xz"
+			hash="sha1:adc60a2c117a0929e18bf357e0a1e6115a9e3b76">
+	</branch>
 	<dependencies>
 		<dep package="zlib"/>
 	</dependencies>
-</tarball>
+</autotools>
 
 <autotools id="jpeg" autogen-sh="configure">
 	<branch version="9" repo="ijg"
