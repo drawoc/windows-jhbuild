@@ -86,7 +86,7 @@
 		<dep package="freetype2"/>
 		<dep package="zlib"/>
 		<dep package="libpng"/>
-		<dep package="jpeg"/>
+		<dep package="libjpeg-turbo"/>
 	</dependencies>
 </autotools>
 
