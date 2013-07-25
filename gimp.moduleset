@@ -10,14 +10,12 @@
 
 <autotools id="babl">
 	<branch/>
-	<dependencies>
-		<dep package="glib2"/>
-	</dependencies>
 </autotools>
 
 <autotools id="gegl-0.2">
 	<branch module="gegl" revision="gegl-0-2"/>
 	<dependencies>
+		<dep package="glib2"/>
 		<dep package="babl"/>
 	</dependencies>
 </autotools>
@@ -25,7 +23,12 @@
 <autotools id="gegl">
 	<branch/>
 	<dependencies>
+		<dep package="glib2"/>
 		<dep package="babl"/>
+
+		<dep package="libpng"/>
+		<dep package="libjpeg-turbo"/>
+		<dep package="libwebp"/>
 	</dependencies>
 </autotools>
 
