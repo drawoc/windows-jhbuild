@@ -4,6 +4,8 @@
 		href="http://ftp.gnu.org/pub/gnu/" />
 	<repository type="tarball" name="gnome.org"
 		href="http://ftp.gnome.org/pub/gnome/sources/" />
+	<repository type="tarball" name="sourceware.org"
+		href="ftp://sourceware.org/pub/" />
 
 <autotools id="iconv" autogen-sh="configure">
 	<branch version="1.14" repo="gnu.org"
@@ -23,10 +25,12 @@
 	</dependencies>
 </autotools>
 
-<tarball id="libffi" version="3.0.11">
-	<source href="ftp://sourceware.org/pub/libffi/libffi-3.0.11.tar.gz"
-		md5sum="f69b9693227d976835b4857b1ba7d0e3"/>
-</tarball>
+<autotools id="libffi" autogen-sh="configure">
+	<branch version="3.0.13" repo="sourceware.org"
+			module="libffi/libffi-3.0.13.tar.gz"
+			hash="md5:45f3b6dbc9ee7c7dfbbbc5feba571529">
+	</branch>
+</autotools>
 
 <autotools id="glib2">
 	<branch version="2.36.3" repo="gnome.org"
