@@ -59,9 +59,9 @@
 </autotools>
 
 <autotools id="iso-codes" autogen-sh="configure">
-	<branch version="3.40" repo="pkg-isocodes"
-			module="iso-codes-3.40.tar.xz"
-			hash="sha1:02b1b5b6fb476bf7dd6251bfbd085c3ba4feaa2a">
+	<branch version="3.44" repo="pkg-isocodes"
+			module="iso-codes-3.44.tar.xz"
+			hash="sha1:628300675948a637ebd69b21673df73a0fbe1cf4">
 	</branch>
 </autotools>
 
