@@ -153,6 +153,11 @@ module_autogenargs['gtk2']       = autogenargs + """ --disable-glibtest \
                                                      --disable-gtk-doc \
                                                      --disable-cups"""
 
+module_autogenargs['gtk3']       = autogenargs + """ --disable-glibtest \
+                                                     --disable-gtk-doc \
+                                                     --disable-cups \
+                                                     --enable-gtk2-dependency"""
+
 module_autogenargs['fontconfig'] = autogenargs + """ --with-arch=i686 \
                                                      --enable-libxml2"""
 
