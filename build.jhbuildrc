@@ -213,7 +213,7 @@ module_makeargs['mingw32-pthreads']= " CROSS=" + mingw_tool_prefix
 module_makeargs['libmng'] = " CC=" + mingw_tool_prefix + "gcc"
 module_extra_env.update (
 {'mingw32-pthreads': 
-	{'PREFIX': prefix},
+	{'PREFIX': prefix, 'INSTALL': 'install'},
  'webkitgtk':
 	{'CXXFLAGS': os.environ['CXXFLAGS'] + ' -I' + checkoutroot + 'pthreads-w32-2-9-1-release -w'},
  'libmng': 
