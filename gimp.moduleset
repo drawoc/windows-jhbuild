@@ -44,7 +44,7 @@
 		<dep package="libwmf"/>
 		<dep package="ghostscript"/>
 		<dep package="poppler"/>
-		<!--<dep package="webkitgtk"/>-->
+		<dep package="webkitgtk"/>
 	</dependencies>
 </metamodule>
 
