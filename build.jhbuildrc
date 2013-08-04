@@ -207,6 +207,9 @@ module_autogenargs['gimp-stable']= autogenargs + """ --disable-python \
 module_autogenargs['gimp-dev']   = autogenargs + """ --disable-python \
                                                      --disable-gtk-doc """
 
+module_autogenargs['gimp-gtk3']  = autogenargs + """ --disable-python \
+                                                     --disable-gtk-doc """
+
 module_autogenargs['gdb']        = autogenargs.replace ("--disable-static", "")
 
 module_makeargs['mingw32-pthreads']= " CROSS=" + mingw_tool_prefix
@@ -228,6 +231,10 @@ module_extra_env.update (
      'ac_cv_lib_bz2_BZ2_bzCompress': 'yes',
      'WMF_CONFIG': os.path.join(searchprefix, 'bin', 'libwmf-config')},
   'gimp-stable':
+    {'FREETYPE_CONFIG': os.path.join(searchprefix, 'bin', 'freetype-config'),
+     'ac_cv_lib_bz2_BZ2_bzCompress': 'yes',
+     'WMF_CONFIG': os.path.join(searchprefix, 'bin', 'libwmf-config')},
+  'gimp-gtk3':
     {'FREETYPE_CONFIG': os.path.join(searchprefix, 'bin', 'freetype-config'),
      'ac_cv_lib_bz2_BZ2_bzCompress': 'yes',
      'WMF_CONFIG': os.path.join(searchprefix, 'bin', 'libwmf-config')},

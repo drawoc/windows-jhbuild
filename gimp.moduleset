@@ -66,4 +66,14 @@
 	</dependencies>
 </autotools>
 
+<autotools id="gimp-gtk3">
+	<branch module="gimp" revision="origin/gtk3-port"/>
+	<dependencies>
+		<dep package="gimp-common"/>
+		<dep package="lcms2"/>
+		<dep package="gegl"/>
+		<dep package="gtk3"/>
+	</dependencies>
+</autotools>
+
 </moduleset>
