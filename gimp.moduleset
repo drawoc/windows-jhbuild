@@ -44,8 +44,10 @@
 		<dep package="libwmf"/>
 		<dep package="ghostscript"/>
 		<dep package="poppler"/>
-		<dep package="webkitgtk"/>
 	</dependencies>
+	<suggests>
+		<dep package="webkitgtk"/>
+	</suggests>
 </metamodule>
 
 <autotools id="gimp-stable">
