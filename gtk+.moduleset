@@ -108,17 +108,15 @@
 </autotools>
 
 <autotools id="harfbuzz">
-	<branch version="0.9.18" repo="freedesktop.org"
-			module="harfbuzz/release/harfbuzz-0.9.18.tar.bz2"
-			hash="sha256:fef0fbbc6d6492cb4074a5e26a699d87d88bef8adc25dda62af6077735a7d908">
-		<!-- From: http://cgit.freedesktop.org/harfbuzz/patch/?id=2966d3603259430800cb5880491d28a1c5ea2314 -->
-		<patch file="harfbuzz-test-build-fix.patch" strip="1"/>
+	<branch version="0.9.19" repo="freedesktop.org"
+			module="harfbuzz/release/harfbuzz-0.9.19.tar.bz2"
+			hash="sha256:d2da0f060d47f6ad9de8c8781bb21fa4b9eae8ea1cd1e956b814095baa002f35">
 	</branch>
-	<suggests>
+	<dependencies>
 		<dep package="cairo"/>
 		<dep package="icu"/>
 		<dep package="freetype2"/>
-	</suggests>
+	</dependencies>
 </autotools>
 
 <autotools id="libxml2" autogen-sh="configure">
