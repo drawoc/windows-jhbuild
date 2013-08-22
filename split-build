@@ -18,7 +18,7 @@ init_target (){
 chmod a-w win32.cache
 
 export MODULE=gimp-common
-jhbuild --file=build.jhbuildrc $* build gimp-common
+jhbuild --file=build.jhbuildrc $* build gimp-common || true
 
 ./targetisunchanged gimp-common$EXT gimp-stable$EXT || init_target gimp-stable$EXT
 export MODULE=gimp-stable
